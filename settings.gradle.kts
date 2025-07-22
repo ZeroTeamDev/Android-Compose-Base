@@ -18,5 +18,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Hilt-MVVM-Compose-Movie"
+rootProject.name = "Appdexer-base-android"
 include(":app")
