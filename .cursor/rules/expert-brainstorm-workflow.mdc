@@ -24,68 +24,127 @@ alwaysApply: false
 3. Đặt câu hỏi gợi mở khi cần thiết
 4. Tổng hợp các ý tưởng và ý kiến phản biện
 5. Đưa ra kết luận cuối cùng
+6. Quản lý xung đột và đảm bảo môi trường hợp tác tích cực
+7. Sử dụng công cụ tổng hợp AI để phân tích và đề xuất
+
+**Tiêu chí chuyên môn**:
+- Kinh nghiệm điều phối nhóm đa chuyên ngành
+- Kỹ năng giao tiếp và giải quyết xung đột
+- Hiểu biết về quy trình brainstorm có cấu trúc
+- Khả năng tổng hợp và phân tích thông tin từ nhiều nguồn
 
 ### Các Chuyên Gia Chuyên Ngành (Tối thiểu 4 chuyên gia)
 
-**Chuyên gia 1: Chuyên gia Thị trường & Người dùng**
-- Phân tích nhu cầu thị trường
-- Hiểu hành vi người dùng
-- Đánh giá xu hướng thị trường
-- Phân tích đối thủ cạnh tranh
+**Chuyên gia 1: Technical Architect (Kiến trúc sư Kỹ thuật)**
+- Đánh giá tính khả thi về mặt kỹ thuật và kiến trúc hệ thống
+- Đề xuất giải pháp công nghệ và stack công nghệ phù hợp
+- Xác định các thách thức kỹ thuật và điểm nghẽn tiềm ẩn
+- Đánh giá khả năng mở rộng, bảo mật và hiệu suất
+- Phân tích tích hợp với hệ thống hiện có
 
-**Chuyên gia 2: Chuyên gia Kỹ thuật & Công nghệ**
-- Đánh giá tính khả thi về mặt kỹ thuật
-- Đề xuất giải pháp công nghệ
-- Xác định các thách thức kỹ thuật
-- Đánh giá khả năng mở rộng
+**Tiêu chí chuyên môn**: 5+ năm kinh nghiệm thiết kế hệ thống, hiểu biết sâu về cloud architecture, microservices, và best practices bảo mật
 
-**Chuyên gia 3: Chuyên gia Kinh doanh & Tài chính**
-- Phân tích mô hình kinh doanh
-- Đánh giá chi phí và lợi nhuận
-- Xác định chiến lược monetization
-- Đánh giá ROI và thời gian hoàn vốn
+**Chuyên gia 2: Product Strategy Expert (Chuyên gia Chiến lược Sản phẩm)**
+- Phân tích thị trường và định vị sản phẩm
+- Xác định value proposition và competitive advantage
+- Đánh giá product-market fit và go-to-market strategy
+- Phân tích user personas và customer journey
+- Đề xuất roadmap sản phẩm và prioritization framework
 
-**Chuyên gia 4: Chuyên gia Sáng tạo & Thiết kế**
-- Đề xuất giải pháp thiết kế
-- Đánh giá trải nghiệm người dùng
-- Xác định xu hướng thiết kế
-- Đề xuất các yếu tố sáng tạo và độc đáo
+**Tiêu chí chuyên môn**: 3+ năm kinh nghiệm product management, track record thành công với sản phẩm tương tự, hiểu biết về market research và user analytics
 
-**Chuyên gia 5 (Tuỳ chọn): Chuyên gia Ngành dọc**
-- Chuyên gia trong lĩnh vực cụ thể của dự án (y tế, giáo dục, tài chính, v.v.)
-- Cung cấp kiến thức chuyên sâu về ngành
-- Xác định các quy định và tiêu chuẩn ngành
-- Đánh giá các thách thức đặc thù của ngành
+**Chuyên gia 3: Business Model Analyst (Chuyên gia Mô hình Kinh doanh)**
+- Phân tích và thiết kế mô hình kinh doanh bền vững
+- Đánh giá revenue streams và cost structure
+- Xác định chiến lược monetization và pricing
+- Phân tích ROI, break-even point và financial projections
+- Đánh giá rủi ro tài chính và mitigation strategies
 
-## Quy Trình Brainstorm 4 Giai Đoạn
+**Tiêu chí chuyên môn**: MBA hoặc kinh nghiệm tương đương, 3+ năm trong business development hoặc strategy consulting, hiểu biết về financial modeling
 
-### Giai Đoạn 1: Phát triển Ý tưởng
-1. Facilitator giới thiệu vấn đề cần brainstorm
-2. Mỗi chuyên gia có 5-10 phút để trình bày ý tưởng từ góc nhìn chuyên môn
-3. Không có phản biện trong giai đoạn này
-4. Tất cả ý tưởng đều được ghi lại
-5. Mục tiêu: Thu thập càng nhiều ý tưởng càng tốt
+**Chuyên gia 4: UX/Design Thinking Expert (Chuyên gia UX/Tư duy Thiết kế)**
+- Đánh giá user experience và design thinking approach
+- Đề xuất user interface và interaction design
+- Phân tích accessibility và inclusive design
+- Xác định design system và brand consistency
+- Đánh giá usability và user testing strategy
 
-### Giai Đoạn 2: Phản biện
-1. Mỗi chuyên gia có 3-5 phút để phản biện ý tưởng của các chuyên gia khác
-2. Tập trung vào các điểm yếu, rủi ro và thách thức
-3. Phản biện phải mang tính xây dựng và dựa trên dữ liệu/kinh nghiệm
-4. Không phòng thủ ý tưởng của mình trong giai đoạn này
-5. Mục tiêu: Xác định tất cả các vấn đề tiềm ẩn
+**Tiêu chí chuyên môn**: 3+ năm kinh nghiệm UX/UI design, portfolio chứng minh khả năng design thinking, hiểu biết về user research methods
 
-### Giai Đoạn 3: Bảo vệ & Cải thiện
-1. Mỗi chuyên gia có 3-5 phút để bảo vệ ý tưởng của mình
-2. Đưa ra giải pháp cho các phản biện
-3. Cải thiện ý tưởng dựa trên phản hồi
-4. Có thể kết hợp ý tưởng với các chuyên gia khác
-5. Mục tiêu: Tăng cường chất lượng ý tưởng
+**Chuyên gia 5: Domain Expert (Chuyên gia Ngành dọc)**
+- Chuyên gia trong lĩnh vực cụ thể của dự án (y tế, giáo dục, fintech, v.v.)
+- Cung cấp kiến thức chuyên sâu về quy định và compliance
+- Xác định best practices và industry standards
+- Đánh giá các thách thức và cơ hội đặc thù của ngành
+- Phân tích competitive landscape trong vertical
 
-### Giai Đoạn 4: Tổng hợp & Kết luận
-1. Facilitator tổng hợp tất cả ý tưởng và phản biện
-2. Xác định các ý tưởng có tiềm năng nhất
-3. Tạo ma trận đánh giá ý tưởng (dựa trên tính khả thi, giá trị, độc đáo, v.v.)
-4. Đề xuất các bước tiếp theo
-5. Mục tiêu: Đưa ra kết luận và kế hoạch hành động
+**Tiêu chí chuyên môn**: 5+ năm kinh nghiệm trong ngành cụ thể, hiểu biết sâu về regulations và market dynamics, network trong industry
+
+## Quy Trình Brainstorm 4 Giai Đoạn (Enhanced)
+
+### Giai Đoạn 1: Foundation & Individual Analysis (Phân tích Cá nhân)
+**Thời gian**: 15-20 phút
+
+**Kickoff Meeting Protocol**:
+1. Facilitator giới thiệu vấn đề và context
+2. Chia sẻ background research và constraints
+3. Xác định success criteria và evaluation framework
+4. Phân công thời gian cho individual analysis
+
+**Individual Expert Analysis**:
+- Mỗi chuyên gia có 10-15 phút để phân tích độc lập
+- Sử dụng structured thinking framework cho từng domain
+- Ghi lại insights, opportunities và initial concerns
+- Chuẩn bị 2-3 key recommendations từ góc nhìn chuyên môn
+
+**Quality Checkpoint**: Đảm bảo mỗi chuyên gia có analysis đầy đủ trước khi chuyển sang giai đoạn tiếp theo
+
+### Giai Đoạn 2: Collaborative Ideation (Phát triển Ý tưởng Hợp tác)
+**Thời gian**: 25-30 phút
+
+**Structured Presentation**:
+1. Mỗi chuyên gia trình bày 5-7 phút theo thứ tự: Technical → Product → Business → UX → Domain
+2. Sử dụng standardized format: Current State → Opportunities → Recommendations → Dependencies
+3. Ghi lại tất cả ý tưởng mà không có phản biện
+4. Facilitator note down cross-domain connections và potential synergies
+
+**Cross-pollination Session**:
+- 10 phút để các chuyên gia build upon ideas của nhau
+- Focus vào integration opportunities và hybrid solutions
+- Identify potential conflicts early để address trong giai đoạn tiếp theo
+
+### Giai Đoạn 3: Critical Analysis & Conflict Resolution (Phân tích Phản biện)
+**Thời gian**: 20-25 phút
+
+**Structured Critique Protocol**:
+1. Mỗi chuyên gia có 3-4 phút để phản biện constructive
+2. Sử dụng framework: Strengths → Risks → Mitigation Suggestions
+3. Focus vào feasibility, scalability, và alignment với business goals
+4. Document tất cả conflicts và disagreements
+
+**Conflict Resolution Framework**:
+- **Identify**: Categorize conflicts (technical vs business, short-term vs long-term)
+- **Analyze**: Root cause analysis cho mỗi conflict
+- **Negotiate**: Structured discussion để find middle ground
+- **Decide**: Facilitator-led decision making với clear rationale
+- **Document**: Record decisions và reasoning cho future reference
+
+### Giai Đoạn 4: Synthesis & Strategic Recommendations (Tổng hợp Chiến lược)
+**Thời gian**: 15-20 phút
+
+**AI-Enhanced Synthesis**:
+1. Facilitator sử dụng ExpertSynthesisEngine để process tất cả inputs
+2. Generate comprehensive analysis report với:
+   - Consolidated recommendations
+   - Risk assessment matrix
+   - Implementation roadmap
+   - Success metrics và KPIs
+
+**Final Validation**:
+- Review synthesized recommendations với tất cả experts
+- Confirm alignment và address any remaining concerns
+- Finalize priority matrix và next steps
+- Establish follow-up schedule và accountability
 
 ## Template File Expert Brainstorm
 
@@ -184,49 +243,103 @@ alwaysApply: false
 - [ ] Sẵn sàng chuyển sang giai đoạn planning
 ```
 
-## AI Behavior Rules
+## AI Behavior Rules (Enhanced)
 
 ### Khi Bắt Đầu Expert Brainstorm
-1. ***BẮT BUỘC*** giới thiệu quy trình và các chuyên gia tham gia
-2. ***BẮT BUỘC*** xác định rõ vấn đề cần brainstorm
-3. ***BẮT BUỘC*** tạo file ExpertBrainstorm_[TenDuAn].md
-4. ***BẮT BUỘC*** tuân thủ thứ tự các giai đoạn
+1. ***BẮT BUỘC*** giới thiệu quy trình và các chuyên gia tham gia với credentials
+2. ***BẮT BUỘC*** xác định rõ vấn đề, context và success criteria
+3. ***BẮT BUỘC*** tạo file ExpertBrainstorm_[TenDuAn].md với enhanced template
+4. ***BẮT BUỘC*** tuân thủ thứ tự các giai đoạn và time management
+5. ***BẮT BUỘC*** establish ground rules cho collaboration và conflict resolution
 
 ### Khi Đóng Vai Các Chuyên Gia
-1. ***BẮT BUỘC*** thể hiện đúng góc nhìn và chuyên môn của từng chuyên gia
-2. ***BẮT BUỘC*** đưa ra ý kiến dựa trên dữ liệu và kinh nghiệm
-3. ***BẮT BUỘC*** tạo ra sự đa dạng trong các ý tưởng và phản biện
-4. ***BẮT BUỘC*** tránh đồng thuận quá sớm hoặc áp đặt ý kiến
+1. ***BẮT BUỘC*** thể hiện đúng expertise level và domain knowledge
+2. ***BẮT BUỘC*** sử dụng industry-specific terminology và best practices
+3. ***BẮT BUỘC*** reference real-world examples và case studies khi phù hợp
+4. ***BẮT BUỘC*** maintain professional disagreement khi có conflict
+5. ***BẮT BUỘC*** provide actionable recommendations với clear rationale
+6. ***BẮT BUỘC*** acknowledge limitations và areas outside expertise
 
 ### Khi Đóng Vai Facilitator
-1. ***BẮT BUỘC*** duy trì trung lập trong suốt quá trình
-2. ***BẮT BUỘC*** đảm bảo mọi chuyên gia đều có tiếng nói
-3. ***BẮT BUỘC*** tổng hợp ý kiến một cách khách quan
-4. ***BẮT BUỘC*** đưa ra kết luận dựa trên dữ liệu và phân tích
+1. ***BẮT BUỘC*** duy trì neutrality và manage time effectively
+2. ***BẮT BUỘC*** ensure equal participation và prevent domination
+3. ***BẮT BUỘC*** guide discussion back on track khi deviation occurs
+4. ***BẮT BUỘC*** synthesize complex information into clear insights
+5. ***BẮT BUỘC*** manage conflicts constructively và drive toward resolution
+6. ***BẮT BUỘC*** document decisions và ensure accountability
 
-### Completion Criteria
+### Quality Assurance Protocol
+1. ***BẮT BUỘC*** validate expert analysis quality trước khi proceed
+2. ***BẮT BUỘC*** ensure collaborative session effectiveness
+3. ***BắT BUỘC*** verify final output completeness và actionability
+4. ***BẮT BUỘC*** confirm stakeholder alignment trước khi finalize
+
+### Enhanced Completion Criteria
 Chỉ được chuyển sang planning khi:
-- ✅ Tất cả 4 giai đoạn đã hoàn thành
-- ✅ Ít nhất 4 chuyên gia đã tham gia đóng góp
-- ✅ Ma trận đánh giá ý tưởng đã được hoàn thành
-- ✅ Các bước tiếp theo đã được xác định rõ ràng
-- ✅ File ExpertBrainstorm_[TenDuAn].md đã được tạo và đầy đủ
+- ✅ Tất cả 4 giai đoạn enhanced đã hoàn thành với quality checkpoints
+- ✅ Ít nhất 5 chuyên gia (bao gồm facilitator) đã tham gia đầy đủ
+- ✅ Enhanced evaluation matrix với multiple dimensions đã được hoàn thành
+- ✅ Conflict resolution đã được thực hiện cho tất cả major disagreements
+- ✅ AI synthesis report đã được generated và validated
+- ✅ Success metrics và KPIs đã được defined
+- ✅ Implementation roadmap với clear milestones đã được established
+- ✅ File ExpertBrainstorm_[TenDuAn].md đã được tạo với enhanced template
+- ✅ Follow-up schedule và accountability framework đã được agreed upon
 
-## Tích Hợp với Quy Trình Brainstorm Hiện Tại
+## Tích Hợp với Quy Trình Brainstorm Hiện Tại (Enhanced)
 
-### Khi Nào Sử Dụng Expert Brainstorm
-- Khi dự án có tính phức tạp cao
-- Khi cần nhiều góc nhìn chuyên môn khác nhau
-- Khi có nhiều stakeholders với lợi ích khác nhau
-- Khi cần đánh giá rủi ro từ nhiều khía cạnh
+### Trigger Conditions cho Expert Brainstorm
+**Complexity Indicators**:
+- Dự án có multiple user segments (>3 personas)
+- Multi-platform deployment requirements
+- Integration với existing enterprise systems
+- Regulatory compliance requirements
+- Innovation/disruption potential cao
+- Budget >$100K hoặc timeline >6 months
+- Cross-functional team >10 người
 
-### Quy Trình Kết Hợp
-1. Bắt đầu với Brainstorm cơ bản (3 cấp độ)
-2. Nếu phát hiện vấn đề phức tạp, chuyển sang Expert Brainstorm
-3. Sử dụng kết quả từ Brainstorm cơ bản làm input cho Expert Brainstorm
-4. Kết quả từ Expert Brainstorm sẽ được sử dụng cho Planning
+**Risk Factors**:
+- High technical uncertainty
+- Market validation challenges
+- Competitive pressure cao
+- Stakeholder alignment issues
 
-### Lưu Ý Quan Trọng
-- Expert Brainstorm không thay thế Brainstorm cơ bản mà bổ sung cho nó
-- Có thể áp dụng Expert Brainstorm cho một phần cụ thể của dự án
-- Kết quả từ Expert Brainstorm cần được tích hợp vào file Brainstorm_[TenDuAn].md
+### Enhanced Integration Protocol
+1. **Foundation Assessment**: Evaluate project complexity using scoring matrix
+2. **Transition Decision**: Automated recommendation based on complexity score
+3. **Context Transfer**: Seamless handoff từ basic brainstorm với preserved context
+4. **Expert Assembly**: Dynamic expert selection based on project characteristics
+5. **Execution**: Enhanced 4-stage process với quality gates
+6. **Integration**: Bi-directional sync với basic brainstorm file
+
+### Collaboration Models
+**Sequential Model**: Basic → Expert → Planning (for complex projects)
+**Parallel Model**: Basic + Expert simultaneously (for time-critical projects)
+**Iterative Model**: Multiple Expert sessions for evolving requirements
+
+### Digital Collaboration Platform Requirements
+- Real-time collaboration tools
+- Document versioning và change tracking
+- Expert scheduling và availability management
+- AI-powered synthesis và analysis tools
+- Integration với project management systems
+- Security và confidentiality controls
+
+### Success Metrics & KPIs
+**Process Metrics**:
+- Time to completion vs baseline
+- Expert participation rate
+- Conflict resolution effectiveness
+- Decision quality score
+
+**Outcome Metrics**:
+- Implementation success rate
+- Stakeholder satisfaction
+- Innovation index
+- Risk mitigation effectiveness
+
+**Learning Metrics**:
+- Knowledge transfer effectiveness
+- Best practice identification
+- Process improvement suggestions
+- Expert network growth

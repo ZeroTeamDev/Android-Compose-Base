@@ -72,12 +72,31 @@ alwaysApply: false
 
 ## Quy Trình Brainstorm
 
+### Phase 0: Context7 Auto-Check (Bắt buộc)
+**AI phải tự động thực hiện:**
+
+1. **Kiểm tra Context7 knowledge base**
+   - Tìm kiếm các dự án tương tự đã thực hiện
+   - Phân tích market trends và competitor solutions
+   - Thu thập best practices cho domain này
+
+2. **Tech stack research**
+   - Đề xuất công nghệ phù hợp dựa trên requirements
+   - Kiểm tra compatibility và ecosystem support
+   - Phân tích pros/cons của các options
+
+3. **Industry insights**
+   - Market research cho domain/industry
+   - User behavior patterns và expectations
+   - Regulatory requirements nếu có
+
 ### Phase 1: Discovery (Cấp độ Cơ bản)
-1. AI hỏi 5 câu hỏi foundation
-2. Phân tích và tóm tắt lại hiểu biết
-3. Xác nhận với người dùng
-4. Tạo problem statement draft
-5. Chuyển sang Phase 2
+1. AI thực hiện Context7 auto-check
+2. AI hỏi 5 câu hỏi foundation (enhanced với Context7 insights)
+3. Phân tích và tóm tắt lại hiểu biết
+4. Xác nhận với người dùng
+5. Tạo problem statement draft
+6. Chuyển sang Phase 2
 
 ### Phase 2: Structure (Cấp độ Trung bình)
 1. AI hỏi 6 câu hỏi về features và structure

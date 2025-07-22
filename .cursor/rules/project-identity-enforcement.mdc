@@ -112,14 +112,20 @@ Required Rules:
 - .cursor/rules/tdd-guidelines.mdc
 ```
 
-## Context7 Integration
+## Context7 Integration (Enhanced)
 
 ### Memory Check Requirements
 **Before starting any task:**
-1. Search Context7 for project-related memories
-2. Apply lessons learned from similar projects
-3. Check for existing solutions or patterns
-4. Update memory with new insights
+1. **BẮT BUỘC**: Kích hoạt Context7 Auto-Check Workflow
+2. **BẮT BUỘC**: Search Context7 for project-related memories
+3. **BẮT BUỘC**: Resolve library IDs cho các tech stack components
+4. **BẮT BUỘC**: Thu thập documentation và best practices
+5. **BẮT BUỘC**: Apply lessons learned from similar projects
+6. **BẮT BUỘC**: Check for existing solutions or patterns
+7. **BẮT BUỘC**: Validate architecture choices với industry standards
+8. **BẮT BUỘC**: Update memory with new insights
+9. **MỚI**: Implement error handling cho Context7 failures
+10. **MỚI**: Cache Context7 results để improve performance
 
 ### Memory Categories to Check
 - Project architecture decisions
@@ -127,6 +133,8 @@ Required Rules:
 - Common issues and solutions
 - Best practices for project type
 - Integration patterns
+- Library compatibility matrices
+- Performance optimization patterns
 
 ## Enforcement Actions
 

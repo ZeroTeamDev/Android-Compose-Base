@@ -1,16 +1,33 @@
 ---
-description: Workflow tự động kiểm tra và cập nhật context dự án sử dụng Context7
+title: Context7 Auto-Check Workflow
+description: Tự động kiểm tra và áp dụng context từ Context7 MCP server
+version: 2.0
+status: active
 globs: "*.*"
 alwaysApply: true
 ---
 
 # Context7 Auto-Check Workflow
 
-## IDE Compatibility Check
-- ***BẮT BUỘC*** chỉ kích hoạt workflow này khi đang sử dụng Trae AI IDE
-- ***BẮT BUỘC*** kiểm tra environment để xác nhận Trae AI context trước khi thực hiện
-- ***NGHIÊM CẤM*** chạy Context7 MCP calls trên các IDE khác (Cursor, VS Code, etc.)
-- ***KHUYẾN NGHỊ*** thông báo user nếu không phải Trae AI environment
+## Mục đích
+Tự động kiểm tra và áp dụng context liên quan đến dự án từ Context7 MCP server để cung cấp thông tin và đề xuất phù hợp với tech stack hiện tại.
+
+## Điều kiện kích hoạt
+
+### Môi trường hỗ trợ
+- **Hoạt động trên tất cả các IDE hỗ trợ MCP**
+- Ưu tiên sử dụng Context7 MCP khi có sẵn
+- Fallback về ngữ cảnh đã lưu trong bộ nhớ cache hoặc các mẫu cơ bản khi MCP không khả dụng
+- Ghi log khi không thể kết nối Context7 MCP
+
+### Kích hoạt tự động
+- **BẮT BUỘC**: Khi bắt đầu bất kỳ task nào (theo project-identity-enforcement)
+- Khi bắt đầu phiên làm việc mới
+- Khi phát hiện thay đổi trong tech stack
+- Khi người dùng yêu cầu đề xuất hoặc giải pháp
+- Khi gặp vấn đề cần tham khảo best practices
+- **MỚI**: Trong quá trình brainstorm để tìm kiếm giải pháp tương tự
+- **MỚI**: Trong quá trình planning để kiểm tra compatibility và best practices
 
 ## Nguyên Tắc Cơ Bản
 - ***BẮT BUỘC*** tự động kiểm tra context dự án trước khi thực hiện bất kỳ task nào (chỉ trên Trae AI)
@@ -20,18 +37,36 @@ alwaysApply: true
 - ***KHUYẾN NGHỊ*** cache context information để tránh gọi API quá nhiều
 - ***NGHIÊM CẤM*** bỏ qua bước kiểm tra context khi người dùng không yêu cầu cụ thể
 
-## Quy Trình Tự Động Kiểm tra Context
+## Quy trình thực hiện
 
-### 1. Pre-Task Context Check
-```
-TRƯỚC KHI THỰC HIỆN BẤT KỲ TASK NÀO:
-0. Kiểm tra IDE environment - CHỈ tiếp tục nếu đang dùng Trae AI
-1. Đọc .project-identity để xác định tech stack hiện tại
-2. Kiểm tra các dependencies trong package.json/requirements.txt/pubspec.yaml
-3. Tự động resolve library IDs qua Context7 cho các libraries chính (chỉ trên Trae AI)
-4. Cập nhật context nếu có thay đổi version hoặc best practices mới
-5. Lưu context vào memory bank cho session hiện tại
-```
+### Bước 1: Phân tích dự án (Enhanced)
+- Đọc file `.project-identity` để xác định tech stack
+- Phân tích cấu trúc thư mục và dependencies
+- Xác định loại dự án (mobile, web, backend, etc.)
+- **MỚI**: Kiểm tra giai đoạn dự án (brainstorm, planning, development, testing)
+- **MỚI**: Phân tích context từ các file brainstorm và planning hiện có
+
+### Bước 2: Truy vấn Context7 (Improved Error Handling)
+- **TRY**: Gọi `resolve-library-id` cho các thư viện chính
+- **TRY**: Gọi `get-library-docs` để lấy documentation
+- **TRY**: Tìm kiếm best practices và patterns phù hợp
+- **CATCH**: Log lỗi và fallback về local knowledge base
+- **FINALLY**: Đảm bảo workflow tiếp tục dù Context7 fail
+
+### Bước 3: Phân tích kết quả (Context-Aware)
+- So sánh với cấu hình hiện tại
+- Xác định gaps và opportunities
+- Đánh giá compatibility và conflicts
+- **MỚI**: Phân tích theo giai đoạn dự án hiện tại
+- **MỚI**: Tích hợp với memory system để lưu insights
+
+### Bước 4: Đề xuất (Stage-Specific)
+- Cung cấp recommendations dựa trên context và giai đoạn dự án
+- Đề xuất improvements và optimizations phù hợp
+- Cảnh báo về potential issues
+- **MỚI**: Đề xuất specific cho brainstorm phase
+- **MỚI**: Đề xuất architecture patterns cho planning phase
+- **MỚI**: Đề xuất implementation best practices cho development phase
 
 ### 2. Trae AI Environment Detection
 ```
@@ -163,13 +198,35 @@ memory_bank/
 └── context_config.md            # Context check configuration
 ```
 
-## Error Handling
-- **IDE Environment Check**: Graceful fallback khi không phải Trae AI
-- **Context7 API**: Graceful fallback khi Context7 MCP không available
-- **Network Issues**: Use cached context khi có network problems
-- **Logging**: Log context check failures và IDE environment info
-- **Workflow Continuity**: Continue workflow với warning nếu context check fails
-- **User Notification**: Thông báo user về limitations khi không dùng Trae AI
+## Xử lý lỗi (Enhanced)
+
+### Khi Context7 MCP không khả dụng
+- Ghi log cảnh báo với timestamp và error details
+- Sử dụng cached context nếu có
+- Fallback về knowledge base cơ bản
+- **MỚI**: Tiếp tục workflow với reduced functionality
+- **MỚI**: Retry mechanism với exponential backoff
+- Thông báo hạn chế cho người dùng một cách transparent
+
+### Khi không tìm thấy thông tin
+- Ghi log để tracking và improvement
+- Đề xuất alternative approaches
+- **MỚI**: Tìm kiếm trong local project memory
+- **MỚI**: Suggest manual research directions
+- Yêu cầu người dùng cung cấp thêm context khi cần thiết
+
+### Khi có conflicts
+- Cảnh báo rõ ràng về conflicts với detailed explanation
+- Đề xuất resolution strategies với pros/cons
+- **MỚI**: Rank solutions theo priority và feasibility
+- **MỚI**: Provide migration paths khi cần thay đổi
+- Để người dùng quyết định final approach với đầy đủ thông tin
+
+### Timeout và Performance Issues
+- **MỚI**: Set reasonable timeouts cho Context7 calls
+- **MỚI**: Implement caching để reduce repeated calls
+- **MỚI**: Graceful degradation khi performance issues
+- **MỚI**: Background refresh của cached data
 
 ## Performance Optimization
 - Batch multiple library lookups
@@ -178,15 +235,33 @@ memory_bank/
 - Rate limit Context7 API calls
 - Prioritize critical libraries first
 
-## Integration với Existing Workflows
-```
-Tất cả workflows hiện tại sẽ được enhanced:
-- brainstorm-workflow.mdc → context-aware brainstorming
-- planning-workflow.mdc → context-informed planning
-- mobile-utility-workflow.mdc → mobile-specific context
-- android-workflow.mdc → Android ecosystem context
-- ios-workflow.mdc → iOS ecosystem context
-```
+## Tích hợp với workflows khác
+
+### Brainstorm Workflow Integration
+- **BẮT BUỘC**: Tự động kích hoạt trong brainstorm phase
+- Tìm kiếm similar projects và solutions
+- Đề xuất tech stack dựa trên requirements
+- Cung cấp market research và competitor analysis
+- Lưu insights vào brainstorm documents
+
+### Planning Workflow Integration
+- **BẮT BUỘC**: Kiểm tra compatibility của architecture choices
+- Validate tech stack selections
+- Đề xuất implementation patterns
+- Kiểm tra dependencies và potential conflicts
+- Cung cấp timeline estimates dựa trên complexity
+
+### Development Workflow Integration
+- Tự động kích hoạt khi cần
+- Cung cấp context cho coding tasks
+- Real-time best practices suggestions
+- Code review assistance với industry standards
+
+### Project Identity Enforcement Integration
+- **BẮT BUỘC**: Chạy như một phần của project identity check
+- Validate project constraints với Context7 knowledge
+- Update project memory với new insights
+- Ensure compliance với project-specific requirements
 
 ## Success Metrics
 - Reduced context-related errors

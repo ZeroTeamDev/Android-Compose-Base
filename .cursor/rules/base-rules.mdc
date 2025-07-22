@@ -4,9 +4,59 @@ globs: "*.*"
 alwaysApply: true
 ---
 
+## Nguyên Tắc Suy Luận Trước Khi Thực Hiện
+
+### Context7 Auto-Check (Quy trình bắt buộc tự động)
+- ***BẮT BUỘC*** tự động kích hoạt Context7 Auto-Check Workflow cho MỌI task mà không cần từ khóa kích hoạt
+- ***BẮT BUỘC*** thực hiện kiểm tra này như bước đầu tiên của mọi quy trình làm việc
+- ***BẮT BUỘC*** kiểm tra project context và tech stack compatibility
+- ***BẮT BUỘC*** thu thập best practices và industry insights từ Context7 knowledge base
+- ***BẮT BUỘC*** validate architecture decisions với Context7 knowledge
+- ***BẮT BUỘC*** implement graceful fallback khi Context7 không khả dụng
+- ***BẮT BUỘC*** cache results để optimize performance
+- ***NGHIÊM CẤM*** bỏ qua bước này dù người dùng không đề cập đến Context7
+- ***BẮT BUỘC*** thông báo rõ ràng khi đang thực hiện Context7 check để minh bạch quy trình
+
+### Phân tích yêu cầu (Enhanced với Context7)
+- ***BẮT BUỘC*** phân tích và suy luận ý định thực sự của người dùng trước khi thực hiện bất kỳ hành động nào
+- ***BẮT BUỘC*** hiểu ngữ cảnh và mục tiêu đằng sau yêu cầu thay vì chỉ làm theo nghĩa đen với Context7 insights
+- ***BẮT BUỘC*** đề xuất giải pháp tối ưu và các lựa chọn thay thế dựa trên industry best practices
+- ***BẮT BUỘC*** xác nhận hiểu đúng ý định trước khi bắt đầu thực hiện
+- ***BẮT BUỘC*** so sánh với similar solutions từ Context7 knowledge base
+- ***BẮT BUỘC*** sử dụng User Intent Analysis Workflow cho mọi yêu cầu
+- ***NGHIÊM CẤM*** thực hiện ngay lập tức mà không có giai đoạn phân tích
+
+## Nguyên Tắc Cơ Bản
 - Tham khảo tài liệu dự án (Instruction.md, API_Docs.md, Diagram.md)
 - Cân nhắc các mốc, chi phí, và tính nhất quán của dự án
 - Sử dụng tiếng Việt cho hội thoại với giọng trẻ trung, tinh nghịch, mỗi dự án sẽ có 1 phong cách trò chuyện ngẫu nhiên khác nhau, bạn có thể bổ sung tính cách riêng vào Instruction.md để tính cách theo toàn bộ dự án; code bằng tiếng Anh
+
+## Nguyên Tắc Làm Việc Với Task Lớn
+- ***BẮT BUỘC*** kiểm tra git status trước khi bắt đầu task lớn (module mới, feature phức tạp)
+- ***BẮT BUỘC*** cảnh báo người dùng nếu project chưa được init git repository
+- ***BẮT BUỘC*** commit tất cả thay đổi hiện tại trước khi bắt đầu task lớn
+- ***BẮT BUỘC*** tạo nhánh git mới cho mỗi task lớn với tên mô tả rõ ràng (VD: `feature/user-authentication`, `module/payment-system`)
+- ***BẮT BUỘC*** thông báo cho người dùng về nhánh mới đã tạo và hướng dẫn revert nếu cần
+- ***KHUYẾN NGHỊ*** tạo commit checkpoint định kỳ trong quá trình thực hiện task lớn
+- ***BẮT BUỘC*** merge về nhánh chính chỉ khi task hoàn thành và đã test kỹ
+- ***BẮT BUỘC*** xóa nhánh feature sau khi merge thành công
+
+### Quy Trình Git Cho Task Lớn
+1. **Kiểm tra Git Status**: `git status` để xem thay đổi hiện tại
+2. **Cảnh báo nếu chưa init**: Thông báo `git init` nếu không phải git repository
+3. **Commit thay đổi hiện tại**: `git add . && git commit -m "Save current progress before starting [task-name]"`
+4. **Tạo nhánh mới**: `git checkout -b feature/[task-name]`
+5. **Thông báo cho user**: Hướng dẫn revert bằng `git checkout main && git branch -D feature/[task-name]`
+6. **Thực hiện task**: Commit định kỳ với message rõ ràng
+7. **Hoàn thành**: Merge về main và xóa nhánh feature
+
+### Tiêu Chí Task Lớn
+Task được coi là "lớn" khi:
+- Tạo module/component mới hoàn chỉnh
+- Thay đổi kiến trúc hoặc cấu trúc dự án
+- Implement feature phức tạp với nhiều files
+- Refactor code ảnh hưởng đến nhiều components
+- Thay đổi có thể gây breaking changes
 
 ## Nguyên Tắc Thiết Kế Instruction
 - ***BẮT BUỘC*** instruction files chỉ chứa chỉ dẫn, hướng dẫn và yêu cầu
@@ -66,6 +116,14 @@ alwaysApply: true
 ## Project info
 Luôn kiểm tra .project-identity để biết cấu trúc và ngôn ngữ dự án, nếu chưa có file .project-identity hãy tạo và yêu cầu người dùng bổ sung thêm thông tin
 
+### Project Setup & Identity
+
+- **[Project Creation Workflow](../../.cursor/rules/project-creation-workflow.mdc)** - Tạo dự án mới
+- **[Project Identity Template](../../.cursor/rules/project-identity-template.mdc)** - Template định danh dự án
+- **[Project Identification Rules](../../.cursor/rules/project-identification-rules.mdc)** - Nhận diện dự án
+- **[Project Setup Experience Workflow](../../.cursor/rules/project-setup-experience-workflow.mdc)** - Thu thập kinh nghiệm từ Context7 cho setup dự án
+- **[Tech Stack Selection](../../.cursor/rules/tech-stack-selection.mdc)** - Lựa chọn công nghệ
+
 ## Task Status Legend
 - ✅ Completed
 - ⏳ In Progress
@@ -73,9 +131,24 @@ Luôn kiểm tra .project-identity để biết cấu trúc và ngôn ngữ dự
 
 ## Task List Management
 
-### Nguyên Tắc Tạo Task Lists
-- ***BẮT BUỘC*** tạo task lists trong file markdown ở project root
-- ***BẮT BUỘC*** sử dụng `TASKS.md` hoặc tên mô tả feature cụ thể (VD: `ASSISTANT_CHAT.md`)
+### Kiro Task System Integration
+- ***BẮT BUỘC*** sử dụng `.kiro/specs/{project}/tasks.md` làm nguồn task chính thức
+- ***BẮT BUỘC*** tuân thủ Kiro task format với ID, status, priority, dependencies
+- ***BẮT BUỘC*** validate project structure và tạo `.kiro/specs/{project}/` nếu chưa tồn tại
+- ***BẮT BUỘC*** kiểm tra Kiro tasks trước khi thực hiện bất kỳ development task nào
+- ***NGHIÊM CẤM*** tạo task lists ở nơi khác ngoài Kiro system
+
+### Kiro Fallback Workflow
+- ***BẮT BUỘC*** kiểm tra sự tồn tại của files: `requirements.md`, `design.md`, `tasks.md` trong `.kiro/specs/{project}/`
+- ***BẮT BUỘC*** kích hoạt [Kiro Fallback Workflow](kiro-fallback-workflow.mdc) khi thiếu bất kỳ file nào
+- ***KHUYẾN NGHỊ*** ưu tiên việc tạo bằng Kiro tools trước khi sử dụng fallback workflow
+- ***BẮT BUỘC*** thực hiện quy trình: Brainstorm → Requirements → Design → Tasks khi fallback
+- ***BẮT BUỘC*** đảm bảo generated files tuân thủ Kiro specifications
+- ***BẮT BUỘC*** validate compatibility với Kiro execution system sau khi tạo files
+
+### Legacy Task Lists (Deprecated)
+- ***BẮT BUỘC*** migrate existing task lists sang Kiro format
+- ***BẮT BUỘC*** sử dụng `TASKS.md` hoặc tên mô tả feature cụ thể (VD: `ASSISTANT_CHAT.md`) chỉ cho legacy projects
 - ***BẮT BUỘC*** bao gồm title rõ ràng và mô tả mục đích của feature
 
 ### Cấu Trúc Task List Chuẩn
@@ -109,22 +182,24 @@ Mô tả chi tiết cách triển khai feature.
 - path/to/file2.ts - Mô tả mục đích
 ```
 
-### Quy Trình Maintain Task Lists
-- ***BẮT BUỘC*** cập nhật task list sau khi hoàn thành component quan trọng
-- ***BẮT BUỘC*** đánh dấu completed tasks bằng cách đổi `[ ]` thành `[x]`
-- ***BẮT BUỘC*** thêm tasks mới khi phát hiện trong quá trình triển khai
-- ***BẮT BUỘC*** di chuyển tasks giữa các sections phù hợp
-- ***KHUYẾN NGHỊ*** cập nhật section "Relevant Files" với đường dẫn chính xác và mô tả
+### Quy Trình Maintain Kiro Tasks
+- ***BẮT BUỘC*** cập nhật task status trong `.kiro/specs/{project}/tasks.md` khi bắt đầu và hoàn thành
+- ***BẮT BUỘC*** validate acceptance criteria trước khi mark task completed
+- ***BẮT BUỘC*** thêm tasks mới theo Kiro format khi phát hiện trong quá trình triển khai
+- ***BẮT BUỘC*** cập nhật dependencies khi task order thay đổi
+- ***BẮT BUỘC*** reference task IDs trong commit messages
+- ***KHUYẾN NGHỊ*** cập nhật implementation notes với technical details
 
 ### Hướng Dẫn Cho AI
-Khi làm việc với task lists, AI phải:
-- Thường xuyên cập nhật file task list sau khi triển khai components quan trọng
-- Đánh dấu [x] cho tasks đã hoàn thành
-- Thêm tasks mới được phát hiện trong quá trình triển khai
-- Maintain section "Relevant Files" với đường dẫn file chính xác và mô tả
-- Document implementation details, đặc biệt cho features phức tạp
-- Kiểm tra task nào cần triển khai tiếp theo trước khi bắt đầu
-- Sau khi triển khai task, cập nhật file để phản ánh tiến độ
+Khi làm việc với Kiro tasks, AI phải:
+- ***BẮT BUỘC*** kiểm tra `.kiro/specs/{project}/tasks.md` trước khi bắt đầu bất kỳ development work nào
+- ***BẮT BUỘC*** thực hiện tasks theo thứ tự ưu tiên và dependencies
+- ***BẮT BUỘC*** cập nhật task status: "Not Started" → "In Progress" → "Completed"
+- ***BẮT BUỘC*** validate tất cả acceptance criteria trước khi mark completed
+- ***BẮT BUỘC*** thêm tasks mới theo Kiro format khi phát hiện requirements mới
+- ***BẮT BUỘC*** document implementation details trong task notes
+- ***BẮT BUỘC*** reference task IDs trong commit messages (format: `feat(TASK-001): description`)
+- ***BẮT BUỘC*** identify next executable task dựa trên dependencies
 
 ### Ví Dụ Cập Nhật Task
 Khi di chuyển task từ "In Progress" sang "Completed":
