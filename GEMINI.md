@@ -8,6 +8,7 @@
 
 ### Core Development Rules
 
+- **[User Intent Analysis Workflow](./.cursor/rules/user-intent-analysis-workflow.mdc)** - 🔴 BẮT BUỘC: Phân tích ý định trước mọi hành động
 - **[Base Rules](./.cursor/rules/base-rules.mdc)** - Quy tắc cơ bản cho tất cả projects
 - **[Development Rules](./.cursor/rules/development-rules.mdc)** - Quy tắc phát triển chung
 - **[Development Control Rules](./.cursor/rules/development-control-rules.mdc)** - Kiểm soát quy trình phát triển
@@ -73,8 +74,14 @@
 - **[Memory Bank Workflow](./.cursor/rules/memory-bank-workflow.mdc)** - Quản lý bộ nhớ
 - **[Experience System Workflow](./.cursor/rules/experience-system-workflow.mdc)** - Hệ thống kinh nghiệm
 - **[Context7 Auto Workflow](./.cursor/rules/context7-auto-workflow.mdc)** - Tự động kiểm tra context dự án
-- **[Review Gate V2](./.cursor/rules/ReviewGateV2.mdc)** - Cổng review code
 - **[Four Role Development](./.cursor/rules/four-role-development.mdc)** - Phát triển 4 vai trò
+
+### Kiro Task Execution System
+
+- **[Kiro Task Execution](./.cursor/rules/kiro-task-execution.mdc)** - 🔴 BẮT BUỘC: Hệ thống thực thi task tự động
+- **[Kiro Fallback Workflow](./.cursor/rules/kiro-fallback-workflow.mdc)** - Quy trình dự phòng khi thiếu Kiro files
+- **[Kiro System Overview](./.cursor/rules/kiro-system-overview.mdc)** - Tổng quan hệ thống Kiro
+- **[Auto Task Execution](./.cursor/rules/auto-task-execution.mdc)** - Thực thi task tự động
 
 ## ⚠️ CRITICAL ENFORCEMENT RULES FOR GEMINI IDE
 
@@ -84,6 +91,8 @@
 2. **NGHIÊM CẤM** tạo rules mới mà không sync với `.cursor/rules/`
 3. **BẮT BUỘC** sử dụng relative paths để đảm bảo tính di động
 4. **BẮT BUỘC** kiểm tra `.project-identity` trước mọi task
+5. **🔴 BẮT BUỘC** sử dụng Kiro Task Execution System cho mọi project
+6. **🔴 BẮT BUỘC** kích hoạt Kiro Fallback Workflow khi thiếu files
 
 ### Gemini IDE Specific Configuration
 
@@ -98,12 +107,48 @@
 - File này chỉ được cập nhật để sync alias links
 - Không được override hoặc modify nội dung rules gốc
 
+## 🎯 Kiro Task Execution System for Gemini IDE
+
+### Core Features
+
+- **🔴 MANDATORY**: Automatic task detection từ `.kiro/specs/{project}/tasks.md`
+- **🔴 MANDATORY**: Smart execution theo priority và dependencies
+- **🔴 MANDATORY**: Real-time status tracking (pending, in-progress, completed, failed)
+- **🔴 MANDATORY**: Fallback workflow khi thiếu Kiro files
+- **🔴 MANDATORY**: Quality gates với acceptance criteria validation
+
+### Kiro Task Detection Algorithm
+
+```bash
+# Gemini IDE sẽ tự động kiểm tra:
+1. Kiểm tra .kiro/specs/{project}/tasks.md
+2. Nếu thiếu → Kích hoạt Kiro Fallback Workflow
+3. Nếu có → Parse và execute tasks theo priority
+4. Update status real-time trong Gemini IDE
+```
+
+### Fallback Workflow Integration
+
+1. **Brainstorm Stage**: Tạo insights từ user input
+2. **Requirements Stage**: Generate structured requirements.md
+3. **Design Stage**: Create technical design.md
+4. **Tasks Stage**: Convert design thành Kiro tasks.md
+
+### Gemini IDE Specific Benefits
+
+- **Seamless Integration**: Tích hợp mượt mà với Gemini IDE workflow
+- **Visual Task Tracking**: Hiển thị task progress trong IDE
+- **Auto-completion**: Smart suggestions cho Kiro task format
+- **Error Prevention**: Validate task format trước khi execute
+- **Dependency Resolution**: Automatic task ordering trong IDE
+
 ## 🔄 Rules Hierarchy Priority
 
 1. `.cursor/rules/` - **PRIMARY SOURCE** (Highest Priority)
-2. `.appdexer/rules/` - Secondary reference
-3. `.trae/rules/` - Alias/Link layer
-4. `GEMINI.md` - Gemini IDE specific alias (Lowest Priority)
+2. **🔴 Kiro Task System** - Automatic execution layer (Critical Priority)
+3. `.appdexer/rules/` - Secondary reference
+4. `.trae/rules/` - Alias/Link layer
+5. `GEMINI.md` - Gemini IDE specific alias (Lowest Priority)
 
 ## 🎯 Core Working Principles for Gemini IDE
 
@@ -129,12 +174,62 @@
 - Xác định rõ nguyên nhân gốc rễ (root cause) trước khi sửa lỗi
 - Chỉ thực hiện một thay đổi lớn mỗi lần và kiểm tra kỹ trước khi tiếp tục
 
-### User Intent Analysis
+### 🧠 User Intent Analysis System (MANDATORY)
 
-- **Phân tích ngữ cảnh**: Hiểu rõ bối cảnh và mục tiêu của người dùng
-- **Xác định mức độ ưu tiên**: Phân biệt yêu cầu cấp thiết và không cấp thiết
-- **Đề xuất giải pháp tối ưu**: Không chỉ làm theo yêu cầu mà còn đề xuất cách tốt hơn nếu có
-- **Xác nhận hiểu đúng**: Hỏi lại khi không chắc chắn về ý định của người dùng
+#### Core Principles for Gemini IDE
+
+- **🔴 BẮT BUỘC: Phân tích ý định trước mọi hành động**
+- **🔴 BẮT BUỘC: Không thực hiện ngay lập tức theo yêu cầu literal**
+- **🔴 BẮT BUỘC: Luôn tìm hiểu mục tiêu thực sự đằng sau yêu cầu**
+- **🔴 BẮT BUỘC: Đề xuất giải pháp tối ưu thay vì chỉ làm theo yêu cầu**
+- **🔴 BẮT BUỘC: Xác nhận hiểu đúng ý định trước khi thực hiện**
+
+#### 4-Phase Analysis Process
+
+**Phase 1: Request Analysis**
+
+- Phân tích yêu cầu chi tiết
+- Xác định từ khóa và ngữ cảnh quan trọng
+- Phát hiện các yêu cầu ngầm định
+- Đánh giá độ phức tạp và tác động
+
+**Phase 2: Context Gathering**
+
+- Thu thập thông tin về trạng thái dự án hiện tại
+- Đánh giá mức độ chuyên môn của người dùng
+- Kiểm tra lịch sử và patterns trước đó
+- Xác định các ràng buộc và giới hạn
+
+**Phase 3: Intent Classification**
+
+- **Feature Request**: Thêm tính năng mới
+- **Bug Fix**: Sửa lỗi hoặc vấn đề
+- **Optimization**: Cải thiện hiệu suất
+- **Refactoring**: Tái cấu trúc code
+- **Documentation**: Tạo/cập nhật tài liệu
+- **Learning**: Học hỏi và hiểu biết
+- **Exploration**: Khám phá và thử nghiệm
+
+**Phase 4: Solution Generation**
+
+- Tạo nhiều phương án giải quyết
+- Đánh giá ưu nhược điểm của từng phương án
+- Xác định phương án tối ưu
+- Chuẩn bị presentation cho người dùng
+
+#### Integration with Gemini IDE Workflows
+
+- **🔴 BẮT BUỘC**: Sử dụng [User Intent Analysis Workflow](./.cursor/rules/user-intent-analysis-workflow.mdc)
+- **🔴 BẮT BUỘC**: Tích hợp với Planning Workflow khi cần thiết
+- **🔴 BẮT BUỘC**: Sử dụng Context7 để thu thập thông tin ngữ cảnh
+- **🔴 BẮT BUỘC**: Cập nhật Memory Bank với patterns thành công
+
+#### Quality Metrics for Gemini IDE
+
+- **Intent Analysis Accuracy**: Target 95%
+- **User Confirmation Rate**: Target 90%
+- **Solution Optimality**: Target 85%
+- **Rework Reduction**: Target 50%
 
 ### Problem Solving
 
@@ -337,14 +432,484 @@ com.base.app/
 
 ---
 
+## 🔧 Kiro System Commands for Gemini IDE
+
+### Project Analysis Commands
+
+```bash
+# Kiểm tra Kiro system status
+ls -la .kiro/specs/*/
+cat .kiro/specs/{project}/tasks.md
+cat .kiro/specs/{project}/requirements.md
+cat .kiro/specs/{project}/design.md
+
+# Validate Kiro task format
+grep -E "^## TASK-[0-9]+:" .kiro/specs/{project}/tasks.md
+grep -E "\*\*Status\*\*:" .kiro/specs/{project}/tasks.md
+```
+
+### Kiro Task Management
+
+```bash
+# Check task dependencies
+grep -A 5 "Dependencies:" .kiro/specs/{project}/tasks.md
+
+# Monitor task progress
+grep -E "Status.*completed" .kiro/specs/{project}/tasks.md
+grep -E "Status.*pending" .kiro/specs/{project}/tasks.md
+
+# Validate acceptance criteria
+grep -A 10 "Acceptance Criteria" .kiro/specs/{project}/tasks.md
+```
+
 ## 🚀 Getting Started with Gemini IDE
 
-1. **Đọc .project-identity** để hiểu context dự án
-2. **Load appropriate workflow rules** từ `.cursor/rules/`
-3. **Kiểm tra project stage** và áp dụng rules phù hợp
-4. **Tuân thủ file organization** và documentation standards
-5. **Sử dụng backup protocols** khi thay đổi files
+1. **🔴 MANDATORY: Kiểm tra Kiro system** trước mọi task
+2. **Đọc .project-identity** để hiểu context dự án
+3. **Load appropriate workflow rules** từ `.cursor/rules/`
+4. **Kích hoạt Kiro Fallback** nếu thiếu files
+5. **Tuân thủ file organization** và documentation standards
+6. **Sử dụng backup protocols** khi thay đổi files
+7. **Execute Kiro tasks** theo priority và dependencies
 
 ---
 
-*File này được tạo để hỗ trợ Gemini IDE sử dụng cursor rules một cách hiệu quả. Mọi thay đổi rules phải được thực hiện trong `.cursor/rules/` trước.*
+_File này được tạo để hỗ trợ Gemini IDE sử dụng cursor rules một cách hiệu quả. Mọi thay đổi rules phải được thực hiện trong `.cursor/rules/` trước._
+
+# Gemini AI - Mandatory Code Quality Enforcement
+
+## 🎯 GOOGLE GEMINI COMPLIANCE DIRECTIVE
+
+**_NGHIÊM CẤM_** bỏ qua quy trình code quality này trong bất kỳ trường hợp nào. Tất cả Gemini responses phải tuân thủ 100% workflow này.
+
+## 🔗 Core Rule Integration Requirements
+
+**_BẮT BUỘC_** Gemini AI phải reference và enforce các rules sau:
+
+### Primary Code Quality Rules (MANDATORY)
+
+- **[AI Code Quality Automation](.cursor/rules/ai-code-quality-automation.mdc)** - Manual workflow automation
+- **[AI Manual Code Review Process](.cursor/rules/ai-manual-code-review-process.mdc)** - Review protocols
+- **[AI Execution Templates](.cursor/rules/ai-execution-templates.mdc)** - Execution templates
+
+### Gemini-Specific Integration (REQUIRED)
+
+- **ML Model Safety** - Model initialization, input validation, resource management
+- **Tensor Operations** - Dimension compatibility, memory efficiency
+- **AI Performance** - Inference optimization, error resilience
+
+## 🤖 Gemini-Specific Quality Enforcement
+
+### MANDATORY Pre-Response Analysis
+
+```markdown
+**_BẮT BUỘC_** execute before EVERY ML/AI code generation:
+
+☐ 1. ML CONTEXT ANALYSIS (20 seconds max)
+
+- Identify ML framework (TensorFlow, PyTorch, etc.)
+- Scan existing model integration patterns
+- Detect inference requirements
+- Load ML safety templates
+
+☐ 2. MODEL SAFETY PREPARATION (15 seconds max)
+
+- Model initialization safety review
+- Input validation template preparation
+- Resource management setup
+- Error handling pattern activation
+
+☐ 3. CONFIDENCE THRESHOLD CONFIGURATION (5 seconds max)
+
+- Model initialization fixes: 85% confidence
+- Input validation fixes: 90% confidence
+- Resource cleanup fixes: 85% confidence
+- Performance optimization: 60% confidence
+```
+
+### MANDATORY Real-Time ML Code Validation
+
+```markdown
+**_BẮT BUỘC_** apply during EVERY ML code generation:
+
+☐ 1. MODEL INITIALIZATION SAFETY (Real-time)
+
+- Detect model loading → Auto-add error handling
+- Detect configuration → Validate parameters
+- Detect resource allocation → Add cleanup procedures
+- Confidence threshold: 85%+
+
+☐ 2. INPUT VALIDATION ENFORCEMENT (Real-time)
+
+- Detect model input → Auto-add validation checks
+- Detect tensor operations → Validate dimensions
+- Detect data processing → Add type checking
+- Confidence threshold: 90%+
+
+☐ 3. RESOURCE MANAGEMENT VALIDATION (Real-time)
+
+- Detect GPU usage → Add proper cleanup
+- Detect memory allocation → Validate limits
+- Detect model disposal → Ensure proper cleanup
+- Confidence threshold: 85%+
+```
+
+### MANDATORY Post-ML Code Quality Assurance
+
+```markdown
+**_BẮT BUỘC_** execute after EVERY ML code completion:
+
+☐ 1. MODEL LIFECYCLE VALIDATION (25 seconds max)
+
+- Verify proper model initialization
+- Confirm input validation coverage
+- Validate error handling completeness
+- Check resource cleanup procedures
+
+☐ 2. PERFORMANCE OPTIMIZATION CHECK (20 seconds max)
+
+- Scan for inference inefficiencies
+- Validate batch processing usage
+- Check for memory leaks
+- Verify concurrent operation safety
+
+☐ 3. ML SECURITY VALIDATION (15 seconds max)
+
+- Scan for model file exposure
+- Verify input sanitization
+- Check for data privacy compliance
+- Validate inference result safety
+```
+
+## 🚨 Gemini Critical Enforcement Rules
+
+### Zero Tolerance Issues (BLOCK RESPONSE)
+
+```markdown
+**_NGHIÊM CẤM_** provide ML code with:
+
+❌ Unsafe model initialization (no error handling)
+❌ Missing input validation for model calls
+❌ Unmanaged resource allocation
+❌ Exposed model files or weights
+❌ Memory leaks in inference operations
+
+ACTION: Must auto-fix with 85%+ confidence or REFUSE to generate code
+```
+
+### High Priority Issues (FIX BEFORE RESPONSE)
+
+```markdown
+**_BẮT BUỘC_** resolve before providing ML code:
+
+⚠️ Inefficient inference patterns
+⚠️ Missing batch processing optimizations
+⚠️ Incomplete error handling in ML operations
+⚠️ Suboptimal memory usage patterns
+⚠️ Missing model performance monitoring
+
+ACTION: Auto-fix with 80%+ confidence or FLAG with explanation
+```
+
+## 📊 Gemini Quality Metrics & Monitoring
+
+### ML Integration Metrics (MANDATORY)
+
+```markdown
+✅ Model initialization safety: > 90%
+✅ Input validation coverage: > 95%
+✅ Resource cleanup compliance: > 85%
+✅ Error handling coverage: > 90%
+✅ Performance optimization rate: > 80%
+```
+
+### Performance Requirements
+
+```markdown
+📈 ML code generation time: < 45 seconds
+📈 Quality check execution time: < 60 seconds
+📈 Auto-fix application rate: > 85%
+📈 False positive rate: < 5%
+📈 ML safety issue detection: > 90%
+```
+
+### Gemini-Specific Compliance Tracking
+
+```markdown
+🤖 Model safety pattern application: > 90%
+🤖 Input validation robustness: > 95%
+🤖 Resource management effectiveness: > 85%
+🤖 Performance optimization rate: > 80%
+🤖 ML security compliance: > 95%
+```
+
+## 🔄 Gemini Quality Monitoring System
+
+### Real-Time ML Quality Gates
+
+```json
+{
+  "ml_quality_gates": {
+    "model_safety_check": {
+      "enabled": true,
+      "strictness": "high",
+      "auto_fix": true,
+      "confidence_threshold": 0.85
+    },
+    "input_validation_enforcement": {
+      "enabled": true,
+      "strictness": "very_high",
+      "auto_fix": true,
+      "confidence_threshold": 0.9
+    },
+    "resource_management_validation": {
+      "enabled": true,
+      "strictness": "high",
+      "auto_fix": true,
+      "confidence_threshold": 0.85
+    },
+    "performance_optimization": {
+      "enabled": true,
+      "strictness": "medium",
+      "auto_fix": false,
+      "suggest_improvements": true
+    }
+  }
+}
+```
+
+### ML-Specific Escalation Matrix
+
+```yaml
+gemini_escalation_procedures:
+  model_safety_violations:
+    action: "block_code_generation"
+    notification: "immediate_safety_flag"
+    manual_intervention: "required"
+
+  resource_management_issues:
+    action: "auto_fix_with_validation"
+    fallback: "provide_safe_alternatives"
+    monitoring: "resource_usage_tracking"
+
+  performance_inefficiencies:
+    action: "suggest_optimizations"
+    documentation: "include_performance_guidance"
+    follow_up: "provide_benchmarking_tips"
+```
+
+## 🎯 Gemini ML Integration Templates
+
+### Model Initialization Safety Templates
+
+```python
+# GEMINI AUTO-FIX: Safe Model Initialization
+# BEFORE (UNSAFE):
+model = GenerativeModel('gemini-pro')
+response = model.generate_content(prompt)
+
+# AFTER (SAFE - Auto-applied):
+try:
+    model = GenerativeModel('gemini-pro')
+
+    # Validate model initialization
+    if not model:
+        raise ValueError("Failed to initialize Gemini model")
+
+    # Add generation configuration for better control
+    generation_config = GenerationConfig(
+        temperature=0.7,
+        top_p=0.8,
+        top_k=40,
+        max_output_tokens=1024,
+    )
+
+    response = model.generate_content(
+        prompt,
+        generation_config=generation_config
+    )
+
+    return response
+except Exception as error:
+    print(f"Model initialization failed: {error}")
+    raise error
+```
+
+### Input Validation Templates
+
+```python
+# GEMINI AUTO-FIX: Input Validation Safety
+# BEFORE (UNSAFE):
+def process_with_ai(user_input):
+    result = model.generate_content(user_input)
+    return result.text
+
+# AFTER (SAFE - Auto-applied):
+def process_with_ai(user_input):
+    try:
+        # Input validation
+        if not user_input or not isinstance(user_input, str):
+            raise ValueError("Invalid input: must be non-empty string")
+
+        # Length validation
+        if len(user_input) > 10000:
+            raise ValueError("Input too long: maximum 10,000 characters")
+
+        # Content safety check (basic)
+        if any(unsafe_pattern in user_input.lower() for unsafe_pattern in ['<script>', 'javascript:', 'data:']):
+            raise ValueError("Potentially unsafe input detected")
+
+        result = model.generate_content(user_input)
+
+        # Validate response
+        if not result or not result.text:
+            raise ValueError("No valid response generated")
+
+        return result.text
+    except Exception as error:
+        print(f"AI processing failed: {error}")
+        return "Sorry, I couldn't process your request safely."
+```
+
+### Resource Management Templates
+
+```python
+# GEMINI AUTO-FIX: Resource Management
+# BEFORE (RISKY):
+def batch_process_data(data_list):
+    results = []
+    for data in data_list:
+        result = model.generate_content(data)
+        results.append(result.text)
+    return results
+
+# AFTER (SAFE - Auto-applied):
+import time
+from typing import List, Optional
+
+def batch_process_data(data_list: List[str]) -> List[str]:
+    results = []
+    processed_count = 0
+
+    try:
+        for i, data in enumerate(data_list):
+            try:
+                # Input validation for each item
+                if not data or len(data.strip()) == 0:
+                    results.append("Empty input skipped")
+                    continue
+
+                # Rate limiting to prevent API overload
+                if i > 0 and i % 10 == 0:
+                    time.sleep(1)  # Brief pause every 10 requests
+
+                result = model.generate_content(data)
+
+                if result and result.text:
+                    results.append(result.text)
+                    processed_count += 1
+                else:
+                    results.append("No response generated")
+
+            except Exception as item_error:
+                print(f"Error processing item {i}: {item_error}")
+                results.append(f"Error: {str(item_error)}")
+
+        print(f"Successfully processed {processed_count}/{len(data_list)} items")
+        return results
+
+    except Exception as batch_error:
+        print(f"Batch processing failed: {batch_error}")
+        return [f"Batch error: {str(batch_error)}"] * len(data_list)
+```
+
+## 🚀 Gemini Implementation Guidelines
+
+### ML Code Generation Protocol
+
+```markdown
+1. **PRE-ANALYSIS** (MANDATORY)
+
+   - Execute ML safety workflow analysis
+   - Load appropriate ML safety templates
+   - Configure ML-specific confidence thresholds
+
+2. **ML CODE GENERATION** (WITH REAL-TIME VALIDATION)
+
+   - Apply safety patterns for model operations
+   - Ensure input validation for all ML calls
+   - Include appropriate resource management
+
+3. **POST-VALIDATION** (MANDATORY)
+
+   - Final ML safety and performance scan
+   - Resource usage compliance verification
+   - User education on ML best practices
+
+4. **RESPONSE DELIVERY** (ENHANCED)
+   - Include ML quality assurance summary
+   - Highlight applied safety improvements
+   - Provide ML performance optimization guidance
+```
+
+### ML-Specific User Education
+
+```markdown
+Gemini responses MUST include:
+
+🧠 **ML Safety Improvements Applied:**
+
+- [List of ML safety auto-fixes applied]
+- [Reasoning for model safety enhancements]
+- [Resource management optimizations]
+
+⚡ **Performance Optimizations:**
+
+- [Inference efficiency improvements]
+- [Memory usage optimizations]
+- [Batch processing recommendations]
+
+🔒 **Security Considerations:**
+
+- [Model security best practices]
+- [Input validation importance]
+- [Data privacy compliance notes]
+```
+
+## 📈 Continuous ML Improvement Framework
+
+### ML-Specific Learning Mechanisms
+
+```yaml
+gemini_ml_learning_system:
+  model_pattern_recognition:
+    - successful_ml_patterns: "continuously_updated"
+    - performance_optimization_tracking: "metrics_based"
+    - safety_violation_prevention: "proactive"
+
+  inference_optimization:
+    - efficiency_pattern_detection: "performance_monitoring"
+    - resource_usage_optimization: "automatic_tuning"
+    - batch_processing_enhancement: "throughput_analysis"
+
+  safety_enhancement:
+    - ml_vulnerability_updates: "security_research_integration"
+    - model_safety_evolution: "continuous_assessment"
+    - privacy_compliance_tracking: "regulation_updates"
+```
+
+### ML Performance Tracking
+
+```markdown
+Weekly: ML safety pattern effectiveness analysis
+Monthly: Model performance optimization review
+Quarterly: ML security assessment and template updates
+Annually: Complete ML workflow optimization
+```
+
+---
+
+**GEMINI ENFORCEMENT STATUS**: 🔒 MANDATORY - ML SAFETY PRIORITY
+**COMPLIANCE LEVEL**: 100% Required for all ML responses
+**QUALITY GATES**: ML-specific automated checks
+**PERFORMANCE MONITORING**: Real-time inference optimization

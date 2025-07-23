@@ -25,7 +25,6 @@ alwaysApply: false
 ### Completion Criteria
 - [x] File `Brainstorm_[ProjectName].md` được tạo
 - [x] Hoàn thành 3 phases: Foundation → Structure → Advanced  
-- [x] User confirmation qua review_gate_chat
 - [x] Risk assessment đã thực hiện
 
 ### Stage Transition

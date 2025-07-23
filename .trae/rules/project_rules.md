@@ -65,7 +65,6 @@
 - **[Experience System Workflow](../../.cursor/rules/experience-system-workflow.mdc)** - Hệ thống kinh nghiệm
 - **[Context7 Auto Workflow](../../.cursor/rules/context7-auto-workflow.mdc)** - Tự động kiểm tra context dự án
 - **[Cross-IDE Compatibility](../../.cursor/rules/cross-ide-compatibility.mdc)** - Đảm bảo hoạt động trên tất cả IDE
-- **[Review Gate V2](../../.cursor/rules/ReviewGateV2.mdc)** - Cổng review code
 - **[Four Role Development](../../.cursor/rules/four-role-development.mdc)** - Phát triển 4 vai trò
 
 ### Kiro Task Execution System

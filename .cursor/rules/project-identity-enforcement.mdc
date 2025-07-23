@@ -187,7 +187,6 @@ Next: Guide user to complete current stage
 ### With Other Workflows
 - **Planning Workflow**: Validates stage progression
 - **Development Rules**: Applies technology-specific constraints
-- **Review Gate**: Ensures quality standards per project type
 - **Resource Management**: Allocates resources based on project needs
 
 ### With MCP Tools

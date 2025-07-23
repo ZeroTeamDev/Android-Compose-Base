@@ -41,29 +41,11 @@ alwaysApply: false
 - Daily progress reports (configurable)
 
 ## MCP (Model Context Protocol) Tools
-### Review Gate V2
-- **Purpose**: Interactive user feedback collection
-- **Usage**: Critical decision points, requirement clarification
-- **Configuration**: `.cursor/rules/review-gate-v2-setup.mdc`
 
 ### Browser Debug
 - **Purpose**: Web development debugging support
 - **Usage**: Frontend testing, responsive design verification
 - **Configuration**: `.cursor/rules/debug-with-browser-mcp.mdc`
-
-### Integration Test
-```javascript
-// Test review_gate_chat availability
-function testMCPTools() {
-  try {
-    review_gate_chat("Test connection", "MCP Test", "Testing MCP connectivity");
-    return true;
-  } catch (error) {
-    console.log("MCP tools not available");
-    return false;
-  }
-}
-```
 
 ## AI API Integrations
 ### Supported APIs

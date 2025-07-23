@@ -1,12 +1,157 @@
-# CLAUDE.md
+# Claude - Configuration & Rules
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+## 🔴 MANDATORY CODE QUALITY ENFORCEMENT
 
-## Project Overview
+**_NGHIÊM CẤM_** bỏ qua quy trình code quality này. Tất cả Claude responses phải tuân thủ 100% workflow mới.
 
-**Android-Compose-Base** is a comprehensive Android template project using Jetpack Compose with a Xiaomi-branded Material3 UI Kit. The project follows Clean Architecture with MVVM pattern and uses Hilt for dependency injection.
+### Core Quality Rules (MANDATORY COMPLIANCE)
 
-**Current State**: Recently recovered from major compilation crisis (85% error reduction). ~20 minor Material3 API compatibility issues remain.
+- **[Claude Code Quality Enforcement](.claude/mandatory-code-quality-enforcement.md)** - Claude specific enforcement
+- **[AI Code Quality Automation](.cursor/rules/ai-code-quality-automation.mdc)** - Manual workflow
+- **[AI Manual Code Review Process](.cursor/rules/ai-manual-code-review-process.mdc)** - Review protocols
+- **[AI Execution Templates](.cursor/rules/ai-execution-templates.mdc)** - Execution templates
+
+## 🚨 Critical Quality Gates
+
+### Before Code Generation (MANDATORY)
+
+```markdown
+☐ Execute Pre-Response Analysis (30 seconds max)
+☐ Context analysis và tech stack identification
+☐ API safety preparation và template loading
+☐ Configure confidence thresholds (API: 90%, JSON: 95%, Async: 85%)
+```
+
+### During Code Generation (MANDATORY)
+
+```markdown
+☐ API call safety → Auto-add try-catch blocks
+☐ JSON parsing safety → Auto-add null checks
+☐ Async pattern validation → Ensure error handling
+☐ Auto-fix application với confidence >= thresholds
+```
+
+### After Code Generation (MANDATORY)
+
+```markdown
+☐ API integration final check
+☐ Async pattern compliance validation
+☐ Security vulnerability scan
+☐ Include quality assurance summary
+```
+
+## 📊 Success Metrics (MANDATORY)
+
+### Critical Success Indicators
+
+```markdown
+✅ API call error handling coverage: > 95%
+✅ JSON parsing safety rate: > 98%
+✅ Async error handling coverage: > 85%
+✅ Security vulnerability prevention: > 99%
+✅ Auto-fix application rate: > 90%
+```
+
+---
+
+**🔴 ENFORCEMENT NOTICE**: Claude phải execute mandatory code quality workflow cho mọi code generation response.
+
+_File này được tạo để hỗ trợ Claude sử dụng cursor rules một cách hiệu quả. Mọi thay đổi rules phải được thực hiện trong `.cursor/rules/` trước._
+
+# Base AI Project - Claude Memory Configuration
+
+> **🔗 MANDATORY RULES SYNCHRONIZATION**  
+> **BẮT BUỘC** sử dụng các rules từ `.cursor/rules/` làm nguồn chính thức cho tất cả workflows.  
+> File này định hướng Claude về cách làm việc với dự án Base-AI-Project.
+
+## 📋 Project Overview
+
+Base-AI-Project là framework template AI-powered được thiết kế cho Cursor IDE với hỗ trợ MCP (Model Context Protocol). Cung cấp workflows, rules và tools toàn diện để phát triển ứng dụng hiệu quả với sự hỗ trợ của AI.
+
+## 🎯 Primary Rules Sources (MANDATORY)
+
+### Core Development Rules
+
+@.cursor/rules/base-rules.mdc
+@.cursor/rules/development-rules.mdc
+@.cursor/rules/development-control-rules.mdc
+@.cursor/rules/file-protection-rules.mdc
+
+### Mobile Development Workflows
+
+@.cursor/rules/mobile-utility-workflow.mdc
+@.cursor/rules/android-workflow.mdc
+@.cursor/rules/ios-workflow.mdc
+@.cursor/rules/tdd-mobile-workflow.mdc
+
+### Project Management
+
+@.cursor/rules/planning-workflow.mdc
+@.cursor/rules/planning-enforcement.mdc
+@.cursor/rules/planning-validation-rules.mdc
+@.cursor/rules/brainstorm-overview.mdc
+@.cursor/rules/brainstorm-detailed-workflow.mdc
+@.cursor/rules/expert-brainstorm-workflow.mdc
+@.cursor/rules/brainstorm-expert-integration.mdc
+@.cursor/rules/expert-brainstorm-guide.mdc
+
+### Code Quality & Architecture
+
+@.cursor/rules/android-code-deduplication.mdc
+@.cursor/rules/universal-code-deduplication.mdc
+@.cursor/rules/android-project-template.mdc
+@.cursor/rules/ios-project-template.mdc
+
+### Integration & API
+
+@.cursor/rules/api-integration-rules.mdc
+@.cursor/rules/backend-rules-optimized.mdc
+@.cursor/rules/frontend-rules.mdc
+
+### Specialized Workflows
+
+@.cursor/rules/git-workflow.mdc
+@.cursor/rules/i18n-rules.mdc
+@.cursor/rules/resource-management.mdc
+@.cursor/rules/terminal-rules.mdc
+@.cursor/rules/design-to-prompt.mdc
+
+### Project Setup & Identity
+
+@.cursor/rules/project-creation-workflow.mdc
+@.cursor/rules/project-identity-template.mdc
+@.cursor/rules/project-identification-rules.mdc
+@.cursor/rules/tech-stack-selection.mdc
+
+### Advanced Features
+
+@.cursor/rules/memory-bank-workflow.mdc
+@.cursor/rules/experience-system-workflow.mdc
+@.cursor/rules/context7-auto-workflow.mdc
+@.cursor/rules/four-role-development.mdc
+
+### Kiro Task Execution System
+
+@.cursor/rules/kiro-task-execution.mdc
+@.cursor/rules/kiro-fallback-workflow.mdc
+@.cursor/rules/kiro-system-overview.mdc
+@.cursor/rules/auto-task-execution.mdc
+
+## ⚠️ CRITICAL ENFORCEMENT RULES
+
+### Mandatory Compliance
+
+1. **BẮT BUỘC** tuân thủ 100% các rules trong `.cursor/rules/`
+2. **NGHIÊM CẤM** tạo rules mới mà không sync với `.cursor/rules/`
+3. **BẮT BUỘC** cập nhật memory khi có thay đổi trong `.cursor/rules/`
+4. **BẮT BUỘC** sử dụng relative paths để đảm bảo tính di động
+
+### Project Structure Understanding
+
+- **Template Framework**: Đây là framework template, không phải ứng dụng cụ thể
+- **Workflow-First**: Luôn áp dụng workflow phù hợp từ `.cursor/rules/`
+- **Platform Agnostic**: Hỗ trợ Android, iOS, Flutter, Web development
+- **AI-Powered**: Tích hợp sâu với AI tools và MCP protocols
 
 ## 🚀 Essential Workflows (MANDATORY SEQUENCE)
 
@@ -16,20 +161,31 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # ALWAYS start by checking project identity
 cat .project-identity
 cat .project-personality
+
+# Check for Kiro system files
+ls -la .kiro/specs/*/
 ```
 
-### 2. Brainstorm Phase (MANDATORY for new projects)
+### 2. Kiro Task System Detection
+
+- **AUTOMATIC**: Claude tự động phát hiện và thực thi Kiro tasks từ `.kiro/specs/{project}/tasks.md`
+- **FALLBACK**: Nếu thiếu files Kiro, tự động kích hoạt Kiro Fallback Workflow
+- **PRIORITY**: Kiro system có ưu tiên cao nhất trong task execution
+
+### 3. Brainstorm Phase (MANDATORY for new projects)
 
 - **NEVER skip brainstorming** for new projects
 - Use: "Tôi muốn brainstorm ý tưởng [your app idea]"
 - Creates structured plan and updates .project-identity
+- **KIRO INTEGRATION**: Tự động tạo Kiro tasks từ brainstorm results
 
-### 3. 4-Role Development Process
+### 4. 4-Role Development Process
 
 - **Planner**: Analyzes requirements and creates plan
 - **Architect**: Designs technical architecture
 - **Builder**: Implements the solution
 - **Tester**: Validates and tests implementation
+- **KIRO ENHANCED**: Mỗi role tuân thủ Kiro task specifications
 
 ### Communication Style
 
@@ -102,84 +258,61 @@ cat .project-personality
 - Test các thay đổi trước khi commit
 - Có kế hoạch rollback khi cần thiết
 
-## 🎯 Primary Rules Sources (MANDATORY)
+## 🎯 Kiro Task Execution System
 
-### Core Development Rules
+### Core Features
 
-@.cursor/rules/base-rules.mdc
-@.cursor/rules/development-rules.mdc
-@.cursor/rules/development-control-rules.mdc
-@.cursor/rules/file-protection-rules.mdc
+- **Automatic Task Detection**: Tự động phát hiện tasks từ `.kiro/specs/{project}/tasks.md`
+- **Smart Execution**: Thực thi tasks theo thứ tự priority và dependencies
+- **Real-time Status Tracking**: Theo dõi trạng thái task (pending, in-progress, completed, failed)
+- **Fallback Workflow**: Tự động tạo missing files (requirements.md, design.md, tasks.md)
+- **Quality Gates**: Xác thực acceptance criteria cho mỗi task
 
-### Mobile Development Workflows
+### Kiro Task Format
 
-@.cursor/rules/mobile-utility-workflow.mdc
-@.cursor/rules/android-workflow.mdc
-@.cursor/rules/ios-workflow.mdc
-@.cursor/rules/tdd-mobile-workflow.mdc
+```markdown
+## TASK-001: Task Title
 
-### Project Management
+**Status**: pending | in-progress | completed | failed
+**Priority**: high | medium | low
+**Dependencies**: TASK-XXX, TASK-YYY
+**Estimated Time**: 2h
 
-@.cursor/rules/planning-workflow.mdc
-@.cursor/rules/planning-enforcement.mdc
-@.cursor/rules/planning-validation-rules.mdc
-@.cursor/rules/brainstorm-overview.mdc
-@.cursor/rules/brainstorm-detailed-workflow.mdc
-@.cursor/rules/expert-brainstorm-workflow.mdc
-@.cursor/rules/brainstorm-expert-integration.mdc
-@.cursor/rules/expert-brainstorm-guide.mdc
+### Description
 
-### Code Quality & Architecture
+Detailed task description...
 
-@.cursor/rules/android-code-deduplication.mdc
-@.cursor/rules/universal-code-deduplication.mdc
-@.cursor/rules/android-project-template.mdc
-@.cursor/rules/ios-project-template.mdc
+### Acceptance Criteria
 
-### Integration & API
+- [ ] Criterion 1
+- [ ] Criterion 2
 
-@.cursor/rules/api-integration-rules.mdc
-@.cursor/rules/backend-rules-optimized.mdc
-@.cursor/rules/frontend-rules.mdc
+### Implementation Notes
 
-### Specialized Workflows
+Technical notes and considerations...
+```
 
-@.cursor/rules/git-workflow.mdc
-@.cursor/rules/i18n-rules.mdc
-@.cursor/rules/resource-management.mdc
-@.cursor/rules/terminal-rules.mdc
-@.cursor/rules/design-to-prompt.mdc
+### Fallback Workflow Stages
 
-### Project Setup & Identity
+1. **Brainstorm**: Tạo insights và requirements từ user input
+2. **Requirements**: Chuyển đổi insights thành structured requirements
+3. **Design**: Tạo technical design và architecture
+4. **Tasks**: Phân chia design thành executable Kiro tasks
 
-@.cursor/rules/project-creation-workflow.mdc
-@.cursor/rules/project-identity-template.mdc
-@.cursor/rules/project-identification-rules.mdc
-@.cursor/rules/tech-stack-selection.mdc
+### Integration Benefits
 
-### Advanced Features
+- **Automation**: Giảm manual task management
+- **Standardization**: Consistent task format across projects
+- **Traceability**: Clear task history và progress tracking
+- **Quality Control**: Built-in validation và acceptance criteria
+- **Dependency Management**: Automatic task ordering
 
-@.cursor/rules/memory-bank-workflow.mdc
-@.cursor/rules/experience-system-workflow.mdc
-@.cursor/rules/context7-auto-workflow.mdc
-@.cursor/rules/ReviewGateV2.mdc
-@.cursor/rules/four-role-development.mdc
+## 🔄 Rules Hierarchy Priority
 
-## ⚠️ CRITICAL ENFORCEMENT RULES
+1. `.cursor/rules/` - **PRIMARY SOURCE** (Highest Priority)
+2. **Kiro Task System** - Automatic task execution layer
 
-### Mandatory Compliance
-
-1. **BẮT BUỘC** tuân thủ 100% các rules trong `.cursor/rules/`
-2. **NGHIÊM CẤM** tạo rules mới mà không sync với `.cursor/rules/`
-3. **BẮT BUỘC** cập nhật memory khi có thay đổi trong `.cursor/rules/`
-4. **BẮT BUỘC** sử dụng relative paths để đảm bảo tính di động
-
-### Project Structure Understanding
-
-- **Template Framework**: Đây là framework template, không phải ứng dụng cụ thể
-- **Workflow-First**: Luôn áp dụng workflow phù hợp từ `.cursor/rules/`
-- **Platform Agnostic**: Hỗ trợ Android, iOS, Flutter, Web development
-- **AI-Powered**: Tích hợp sâu với AI tools và MCP protocols
+## 📁 Critical File Locations
 
 ### Documentation Rules
 
@@ -194,164 +327,103 @@ cat .project-personality
 - Maintain directory structure in backups
 - Create timestamped backup folders: `_backups/YYYY-MM-DD/`
 
-## Essential Commands
+### Project Organization
 
-### Build Commands
+```
+Base-AI-Project/
+├── .cursor/rules/          # 60+ workflow rules (source of truth)
+├── instructions/           # Project-specific instructions
+├── docs/                   # Documentation
+│   ├── project/           # All .md files MUST go here
+│   └── templates/         # Project templates
+├── brainstorms/           # Brainstorm session files
+├── experiences/           # Knowledge base from past projects
+├── scripts/               # Automation scripts
+├── design/               # Design files for AI analysis
+└── _backups/             # File backups (git-ignored)
+```
+
+### Platform-Specific Patterns
+
+#### Android Development
+
+- Architecture: MVVM + Clean Architecture
+- Package: `com.base.app/{base,core,data,domain,ui}`
+- **ALWAYS check module registry** before creating features
+- Base classes in base/ package
+- Feature modules in ui/features/
+
+#### iOS Development
+
+- Architecture: MVVM + SwiftUI
+- Use Combine for reactive programming
+- Follow Apple's Human Interface Guidelines
+- Implement proper state management
+
+#### Flutter Development
+
+- Architecture: Clean Architecture + BLoC
+- Separation of concerns with layers
+- Widget composition patterns
+- Platform-specific implementations
+
+#### Web Development
+
+- Frontend: Component-based architecture
+- Backend: RESTful API design
+- State management with context/stores
+- Responsive design principles
+
+## 🔧 Common Development Commands
+
+### Project Initialization
 
 ```bash
-# Build entire project
-./gradlew build
+# Check project identity before any task
+cat .project-identity
 
-# Build debug APK (develop flavor)
-./gradlew assembleDevelopDebug
+# For new projects - MANDATORY brainstorm first
+# Start with: "Tôi muốn brainstorm ý tưởng [your app idea]"
 
-# Clean build
-./gradlew clean build
+# Backup files before major changes
+./scripts/backup_file.sh <file_path>
 
-# Build with detailed output for debugging
-./gradlew build --stacktrace --info
+# Send Telegram notifications
+./scripts/notify.sh "Task completed: [description]"
 ```
 
-### Test Commands
+### Testing & Quality
 
 ```bash
-# Run unit tests
-./gradlew test
+# Run tests (check project-specific test commands)
+# Android: ./gradlew test
+# iOS: xcodebuild test
+# Flutter: flutter test
+# Web: npm test
 
-# Run instrumented tests (requires device/emulator)
-./gradlew connectedAndroidTest
-
-# Test specific flavor
-./gradlew testDevelopDebugUnitTest
+# Check code quality
+# Android: ./gradlew lint
+# iOS: swiftlint
+# Flutter: flutter analyze
+# Web: npm run lint
 ```
 
-### Lint Commands
+### Project Analysis
 
 ```bash
-# Run lint checks
-./gradlew lint
-
-# Lint specific flavor
-./gradlew lintDevelopDebug
+grep -r "pattern" . --include="*.ext"
+find . -name "*.md" -type f
 ```
 
-### Development Commands
+## 🎯 Key Success Factors
 
-```bash
-# Install and run on device/emulator
-./gradlew installDevelopDebug
-
-# Pre-commit validation
-./gradlew clean build test lint
-```
-
-## Architecture Overview
-
-### Project Structure
-
-```
-com.xiaomi.base/
-├── data/           # Data layer: repositories, data sources, DTOs
-├── domain/         # Domain layer: use cases, domain models, repository interfaces
-├── ui/             # Presentation layer
-│   ├── kit/        # Xiaomi UI Kit (Material3-based component library)
-│   ├── screens/    # Feature screens with ViewModels
-│   └── theme/      # Application theming
-├── di/             # Hilt dependency injection modules
-└── navigation/     # Navigation component setup
-```
-
-### UI Kit System
-
-The project features a comprehensive UI Kit at `ui/kit/` organized by Material Design categories:
-
-- **foundation/**: Core design tokens (colors, typography, spacing, shapes)
-- **components/**: Reusable UI components categorized by function
-  - actions/ (Buttons, FABs, Chips)
-  - communication/ (Badges, Progress, Snackbars)
-  - containment/ (Cards, Lists, Dividers)
-  - navigation/ (AppBars, BottomNav, Tabs)
-  - selection/ (Checkboxes, Switches, Sliders)
-  - specialized/ (Xiaomi-specific: AI, Biometric, Security)
-- **templates/**: Pre-built screen templates
-- **utils/**: Extension functions and utilities
-
-### Key Architectural Patterns
-
-1. **Clean Architecture Layers**:
-
-   - Domain layer contains business logic and is framework-independent
-   - Data layer implements repository interfaces from domain
-   - UI layer uses ViewModels with StateFlow for state management
-
-2. **Dependency Injection**:
-
-   - Hilt modules in `di/` package
-   - ViewModels use `@HiltViewModel` annotation
-   - Repositories injected via constructor injection
-
-3. **Navigation**:
-   - Uses Navigation Compose
-   - Routes defined as sealed classes
-   - Navigation handled in `navigation/` package
-
-## Development Guidelines
-
-### Material3 Migration
-
-The project is migrating to Material3. When working with components:
-
-- Use `MaterialTheme.spacing.*` instead of hardcoded dp values
-- Import from `androidx.compose.material3.*` not `material.*`
-- Check component signatures - many have changed (e.g., Snackbar `message` → `content`)
-
-### Common Patterns
-
-```kotlin
-// Spacing
-MaterialTheme.spacing.Large // instead of 24.dp
-
-// Component scopes
-Tab(...) {
-    // This is now TabIndicatorScope
-}
-
-// Tooltips
-BasicTooltipBox(
-    positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
-    tooltip = { ... }
-) { ... }
-```
-
-### Known Issues to Fix
-
-1. **XiaomiSnackbars.kt**: Update `message` parameter to `content`
-2. **XiaomiTabs.kt**: Fix indicator scope receiver type
-3. **Selection components**: Update Material3 API usage
-4. **XiaomiTooltips.kt**: Fix nullable parameter handling
-
-### Testing
-
-- Component previews in each file
-- UI test package mirrors main package structure
-- Use component catalog for visual testing
-
-## Important Files
-
-- **FINAL_CRISIS_RESOLUTION_REPORT.md**: Details of recent fixes and migration patterns
-- **app/src/main/java/com/xiaomi/base/ui/kit/README.md**: UI Kit documentation
-- **.project-identity**: Project configuration and development stage tracking
-- **libs.versions.toml**: Centralized dependency versions
-
-## Tech Stack
-
-- **Kotlin**: 2.2.0
-- **Compose BOM**: 2025.06.01
-- **Hilt**: 2.56.2
-- **Room**: 2.7.2
-- **Retrofit**: 3.0.0
-- **Min SDK**: 23 (Android 6.0)
-- **Target SDK**: 35 (Android 15)
+1. **Always analyze user intent** before implementation
+2. **Check .project-identity** before any task
+3. **Use appropriate workflow** from `.cursor/rules/`
+4. **Follow platform-specific conventions**
+5. **Create modular, reusable components**
+6. **Update documentation** alongside code changes
+7. **Test thoroughly** before marking complete
 
 ## ⚠️ Common Pitfalls to Avoid
 
@@ -362,6 +434,26 @@ BasicTooltipBox(
 - Not backing up before major changes
 - Implementing without understanding requirements
 - Not following the 4-role development process
+
+## 🔄 Integration Features
+
+- **Telegram Notifications**: Task completion alerts
+- **MCP Tools**: Browser debugging, database management
+- **Memory Bank**: Persistent knowledge storage
+- **Experience System**: Learning from past projects
+
+## Project Information
+
+### Project Identity
+
+- Luôn kiểm tra .project-identity để biết cấu trúc và ngôn ngữ dự án
+- Nếu chưa có file .project-identity hãy tạo và yêu cầu người dùng bổ sung thêm thông tin
+
+### Task Status Legend
+
+- ✅ Completed
+- ⏳ In Progress
+- ❌ Not Started
 
 ## Git Workflow
 
@@ -395,3 +487,7 @@ BasicTooltipBox(
 - Tổ chức strings theo feature hoặc screen
 - Sử dụng plurals cho các string có số lượng
 - Implement proper formatting cho dates, numbers, currencies
+
+---
+
+**Remember**: This is a template framework, not a specific application. Always adapt workflows to match your actual project needs while maintaining core principles from `.cursor/rules/`.

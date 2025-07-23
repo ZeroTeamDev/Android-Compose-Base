@@ -18,8 +18,6 @@ alwaysApply: false
 
 ## Quy Trình Appdexer Auto-Setup (MANDATORY FIRST STEP)
 - ***BẮT BUỘC*** kiểm tra file .project-identity được tạo tự động
-- ***BẮT BUỘC*** verify rằng Review Gate MCP đã được cấu hình trong Cursor
-- ***BẮT BUỘC*** test review_gate_chat tool trước khi tiếp tục
 - ***BẮT BUỘC*** thiết lập voice commands cho project type được phát hiện
 - ***BẮT BUỘC*** cấu hình resource management tự động
 
@@ -74,7 +72,6 @@ alwaysApply: false
 - ***BẮT BUỘC*** sử dụng natural language để describe functionality
 
 ## Brainstorming với Người Dùng (Powered by Appdexer)
-- ***BẮT BUỘC*** sử dụng review_gate_chat để tương tác với người dùng
 - Đặt câu hỏi để hiểu rõ mục tiêu và tầm nhìn của ý tưởng
 - Chia câu hỏi thành nhiều lần hỏi, không hỏi tất cả trong cùng một lần
 - Hỏi về use cases, user stories và các tình huống sử dụng
@@ -154,7 +151,6 @@ alwaysApply: false
 - Cấu trúc thư mục instruction nên phản ánh cấu trúc của dự án
 
 ## Instruction Chi Tiết Cho Giao Diện (AI-Enhanced)
-- ***BẮT BUỘC*** sử dụng review_gate_chat để brainstorm lại với người dùng về giao diện họ mong muốn
 - Tạo file instruction riêng cho giao diện với cấu trúc: `[TênDựÁn]_UI_Instruction.md`
 - Thu thập tham khảo hình ảnh, mockups, hoặc wireframes từ người dùng
 - Liệt kê chi tiết các màn hình/components cần được phát triển
@@ -225,7 +221,6 @@ alwaysApply: false
 2. **Test Appdexer** - Verify tất cả tools hoạt động
 3. **Kiểm tra design/** - Tìm file design có sẵn
 4. **Áp dụng Design-to-prompt**
-5. **Brainstorm** - Thu thập thêm thông tin từ người dùng qua review_gate_chat
 6. **Nghiên cứu competitor**
 7. **Tạo Design_Analysis.md** - Nếu có design files
 8. **Tạo Instruction.md** - File outline chính (auto-generated)
@@ -235,7 +230,6 @@ alwaysApply: false
 12. **Begin implementation** - Theo thứ tự modules với voice support
 
 ## Quy Trình AI Implementation với Appdexer
-- ***BẮT BUỘC*** AI sử dụng review_gate_chat để tương tác với người dùng
 - ***BẮT BUỘC*** AI đọc `Instruction.md` để hiểu tổng quan
 - ***BẮT BUỘC*** AI truy cập instruction module tương ứng với task hiện tại
 - ***BẮT BUỘC*** AI cập nhật trạng thái task khi hoàn thành
@@ -246,7 +240,6 @@ alwaysApply: false
 ## Quy Trình Thực Hiện (Updated với Appdexer)
 1. **MANDATORY: Setup Appdexer**
 2. **Test all Appdexer tools** - verify functionality
-3. **Brainstorm với người dùng** qua review_gate_chat với nhiều vòng hỏi đáp
 4. **Nghiên cứu và phân tích đối thủ cạnh tranh** với AI support
 5. **Phân tích yêu cầu từ user** sử dụng AI context analysis
 6. **Rà soát cấu trúc project** với auto-detection
@@ -254,11 +247,9 @@ alwaysApply: false
 8. **Auto-update .code-workspace** với màu sắc và emoji phù hợp
 9. **Tạo file MockupData.md** nếu dự án sử dụng dữ liệu giả lập
 10. **Tạo file db-schema.sql** nếu dự án sử dụng database
-11. **Xác nhận instruction đã hoàn thiện** qua review_gate_chat
 12. **Tuân thủ các task trong instruction** theo thứ tự với voice support
 13. **Cập nhật trạng thái task** khi hoàn thành
 14. **Kiểm tra tất cả tiêu chí hoàn thành** với AI validation
-15. **Tổng kết khi hoàn thiện tính năng** qua review_gate_chat
 
 ## Quản Lý Instruction Files với Appdexer
 - Giữ instruction files trong Git version control
@@ -273,19 +264,6 @@ alwaysApply: false
 - ***BẮT BUỘC*** sử dụng tìm kiếm và tải về các icon cần thiết có thể tải từ https://www.svgrepo.com/ 
 - ***BẮT BUỘC*** Appdexer tự động cập nhật file `.gitignore` để loại trừ các file tạm
 - ***KHUYẾN NGHỊ*** sử dụng voice commands: "Tìm icon [description] cho [context]"
-
-## Voice-First Development với Appdexer
-- ***BẮT BUỘC*** sử dụng voice commands khi có thể thay vì typing
-- ***BẮT BUỘC*** train custom voice commands cho project-specific tasks
-- ***KHUYẾN NGHỊ*** phát triển theo workflow: Voice → AI Analysis → Code Generation
-- ***KHUYẾN NGHỊ*** sử dụng review_gate_chat để clarify requirements thông qua voice
-
-Ví dụ Voice Commands:
-- "Tạo component header với navigation"
-- "Thêm dark mode support"
-- "Tìm weather icons cho mobile app"
-- "Setup database cho user authentication"
-- "Phân tích design file trong thư mục design"
 
 @file ../Instruction.md
 @file ../Project.md
