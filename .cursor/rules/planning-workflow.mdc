@@ -42,6 +42,47 @@ alwaysApply: false
    - Chọn giải pháp phù hợp nhất dựa trên tiêu chí đã xác định
    - Xác định phạm vi và giới hạn của kế hoạch
 
+## Định dạng EARS cho Requirements
+
+### EARS (Easy Approach to Requirements Syntax)
+Sử dụng định dạng EARS để viết requirements rõ ràng và không mơ hồ:
+
+#### 1. Ubiquitous Requirements (Yêu cầu phổ quát)
+```
+THE SYSTEM SHALL [always do something]
+Ví dụ: THE SYSTEM SHALL log all user authentication attempts
+```
+
+#### 2. Event-Driven Requirements (Yêu cầu theo sự kiện)
+```
+WHEN [trigger] THE SYSTEM SHALL [response]
+Ví dụ: WHEN user clicks login button THE SYSTEM SHALL validate credentials
+
+WHILE [state] THE SYSTEM SHALL [behavior]
+Ví dụ: WHILE user session is active THE SYSTEM SHALL maintain authentication state
+```
+
+#### 3. State-Driven Requirements (Yêu cầu theo trạng thái)
+```
+WHILE [in state] THE SYSTEM SHALL [behavior]
+Ví dụ: WHILE system is in maintenance mode THE SYSTEM SHALL display maintenance message
+```
+
+#### 4. Conditional Requirements (Yêu cầu có điều kiện)
+```
+IF [condition] THEN THE SYSTEM SHALL [action]
+Ví dụ: IF password is incorrect 3 times THEN THE SYSTEM SHALL lock the account
+
+WHERE [feature applies] THE SYSTEM SHALL [behavior]
+Ví dụ: WHERE user has admin role THE SYSTEM SHALL show admin dashboard
+```
+
+#### 5. Optional Requirements (Yêu cầu tùy chọn)
+```
+WHERE [feature is optional] THE SYSTEM SHALL [behavior]
+Ví dụ: WHERE dark mode is enabled THE SYSTEM SHALL use dark color scheme
+```
+
 ## Câu Hỏi Brainstorm Theo Loại Dự Án
 
 ### Câu Hỏi Chung
@@ -81,17 +122,28 @@ alwaysApply: false
 - **Phạm Vi**: [Xác định rõ những gì thuộc và không thuộc phạm vi]
 - **Đầu Ra Mong Muốn**: [Liệt kê các kết quả cụ thể cần đạt được]
 
-## 2. Phân Tích Hiện Trạng
+## 2. Requirements (EARS Format)
+### Functional Requirements
+- THE SYSTEM SHALL [requirement 1]
+- WHEN [event] THE SYSTEM SHALL [requirement 2]
+- IF [condition] THEN THE SYSTEM SHALL [requirement 3]
+
+### Non-Functional Requirements
+- THE SYSTEM SHALL [performance requirement]
+- THE SYSTEM SHALL [security requirement]
+- THE SYSTEM SHALL [usability requirement]
+
+## 3. Phân Tích Hiện Trạng
 - **Cấu Trúc Hiện Tại**: [Mô tả cấu trúc code/dự án hiện tại]
 - **Các Thành Phần Liên Quan**: [Liệt kê các module/thành phần liên quan]
 - **Giới Hạn & Ràng Buộc**: [Xác định các giới hạn kỹ thuật hoặc nghiệp vụ]
 
-## 3. Giải Pháp Đề Xuất
+## 4. Giải Pháp Đề Xuất
 - **Tổng Quan Giải Pháp**: [Mô tả high-level về giải pháp]
 - **Thiết Kế & Kiến Trúc**: [Mô tả cấu trúc và các thành phần chính]
 - **Công Nghệ & Thư Viện**: [Liệt kê công nghệ và thư viện sẽ sử dụng]
 
-## 4. Template Selection & Configuration
+## 5. Template Selection & Configuration
 - **Platform Analysis**: [Xác định platform chính và tech stack]
 - **Template Requirements**: [Liệt kê templates cần thiết dựa trên features]
 - **Selected Templates**:
@@ -101,7 +153,7 @@ alwaysApply: false
 - **Excluded Templates**: [Templates bị loại bỏ và lý do]
 - **Integration Plan**: [Kế hoạch tích hợp templates vào workspace]
 
-## 5. Kế Hoạch Triển Khai
+## 6. Kế Hoạch Triển Khai
 - **Kiro Task Integration**:
   - Tạo `.kiro/specs/{project}/tasks.md` với format chuẩn Kiro
   - Mỗi task phải có ID duy nhất, status, priority, dependencies
@@ -110,7 +162,13 @@ alwaysApply: false
 
 - **Các Bước Thực Hiện**:
   1. [Bước 1] - [Mô tả] - [Ước tính thời gian] - [Task ID: TASK-001]
+     - **EARS Requirement**: WHEN [trigger] THE SYSTEM SHALL [action]
+     - **Dependencies**: [List any dependencies]
+     - **Acceptance Criteria**: [Define success criteria]
   2. [Bước 2] - [Mô tả] - [Ước tính thời gian] - [Task ID: TASK-002]
+     - **EARS Requirement**: THE SYSTEM SHALL [action]
+     - **Dependencies**: TASK-001
+     - **Acceptance Criteria**: [Define success criteria]
   ...
 
 - **Ưu Tiên & Phụ Thuộc**:
@@ -118,12 +176,12 @@ alwaysApply: false
   - P1: [Task ưu tiên cao] - [Dependencies: TASK-001]
   - P2: [Task ưu tiên trung bình] - [Dependencies: TASK-001, TASK-002]
 
-## 6. Kiểm Thử & Đánh Giá
+## 7. Kiểm Thử & Đánh Giá
 - **Kế Hoạch Kiểm Thử**: [Mô tả cách kiểm thử]
 - **Tiêu Chí Thành Công**: [Xác định rõ khi nào tính năng được coi là hoàn thành]
 - **Rủi Ro & Giảm Thiểu**: [Liệt kê rủi ro tiềm ẩn và cách giảm thiểu]
 
-## 6. Tài Nguyên & Tham Khảo
+## 8. Tài Nguyên & Tham Khảo
 - [Liệt kê tài liệu tham khảo và tài nguyên liên quan]
 ```
 

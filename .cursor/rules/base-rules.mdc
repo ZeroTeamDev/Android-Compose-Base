@@ -17,6 +17,16 @@ alwaysApply: true
 - ***NGHIÊM CẤM*** bỏ qua bước này dù người dùng không đề cập đến Context7
 - ***BẮT BUỘC*** thông báo rõ ràng khi đang thực hiện Context7 check để minh bạch quy trình
 
+### Info-Hub Multi-AI Synchronization (Quy trình bắt buộc tự động)
+- ***BẮT BUỘC*** kiểm tra file `info-hub.md` trước khi bắt đầu BẤT KỲ công việc nào
+- ***BẮT BUỘC*** cập nhật `info-hub.md` sau khi hoàn thành công việc quan trọng
+- ***BẮT BUỘC*** kiểm tra phần "Currently Working" để tránh xung đột với AI khác
+- ***BẮT BUỘC*** đọc phần "Known Issues & Blockers" để biết các vấn đề hiện tại
+- ***BẮT BUỘC*** tuân thủ "Update Protocol" khi cập nhật info-hub
+- ***BẮT BUỘC*** sử dụng lock file (.info-hub.lock) khi cập nhật
+- ***NGHIÊM CẤM*** bỏ qua bước kiểm tra info-hub dù người dùng không đề cập
+- ***NGHIÊM CẤM*** làm việc trùng lặp với AI khác đang active
+
 ### Phân tích yêu cầu (Enhanced với Context7)
 - ***BẮT BUỘC*** phân tích và suy luận ý định thực sự của người dùng trước khi thực hiện bất kỳ hành động nào
 - ***BẮT BUỘC*** hiểu ngữ cảnh và mục tiêu đằng sau yêu cầu thay vì chỉ làm theo nghĩa đen với Context7 insights
@@ -136,6 +146,7 @@ Luôn kiểm tra .project-identity để biết cấu trúc và ngôn ngữ dự
 - ***BẮT BUỘC*** tuân thủ Kiro task format với ID, status, priority, dependencies
 - ***BẮT BUỘC*** validate project structure và tạo `.kiro/specs/{project}/` nếu chưa tồn tại
 - ***BẮT BUỘC*** kiểm tra Kiro tasks trước khi thực hiện bất kỳ development task nào
+- ***BẮT BUỘC*** sử dụng [Task Creation Workflow](task-creation-workflow.mdc) để tự động tạo comprehensive tasks
 - ***NGHIÊM CẤM*** tạo task lists ở nơi khác ngoài Kiro system
 
 ### Kiro Fallback Workflow
