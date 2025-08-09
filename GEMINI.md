@@ -76,10 +76,11 @@
 - **[Context7 Auto Workflow](./.cursor/rules/context7-auto-workflow.mdc)** - Tự động kiểm tra context dự án
 - **[Four Role Development](./.cursor/rules/four-role-development.mdc)** - Phát triển 4 vai trò
 
-### Kiro Task Execution System
+### 🔴 CRITICAL PRIORITY: Task Creation & Execution System (TRỌNG SỐ CAO)
 
+- **🔴 HIGHEST PRIORITY: [Task Creation Workflow](./.cursor/rules/task-creation-workflow.mdc)** - **BẮT BUỘC**: Quy trình tạo task tự động với AI expansion (TRỌNG SỐ CAO)
 - **[Kiro Task Execution](./.cursor/rules/kiro-task-execution.mdc)** - 🔴 BẮT BUỘC: Hệ thống thực thi task tự động
-- **[Kiro Fallback Workflow](./.cursor/rules/kiro-fallback-workflow.mdc)** - Quy trình dự phòng khi thiếu Kiro files
+- **[Kiro Dynamic Workflow](./.cursor/rules/kiro-dynamic-workflow.mdc)** - Quy trình tạo/cập nhật requirements, design, tasks theo yêu cầu
 - **[Kiro System Overview](./.cursor/rules/kiro-system-overview.mdc)** - Tổng quan hệ thống Kiro
 - **[Auto Task Execution](./.cursor/rules/auto-task-execution.mdc)** - Thực thi task tự động
 
@@ -92,7 +93,7 @@
 3. **BẮT BUỘC** sử dụng relative paths để đảm bảo tính di động
 4. **BẮT BUỘC** kiểm tra `.project-identity` trước mọi task
 5. **🔴 BẮT BUỘC** sử dụng Kiro Task Execution System cho mọi project
-6. **🔴 BẮT BUỘC** kích hoạt Kiro Fallback Workflow khi thiếu files
+6. **🔴 BẮT BUỘC** sử dụng Kiro Dynamic Workflow cho tạo/cập nhật artifacts
 
 ### Gemini IDE Specific Configuration
 
@@ -114,7 +115,7 @@
 - **🔴 MANDATORY**: Automatic task detection từ `.kiro/specs/{project}/tasks.md`
 - **🔴 MANDATORY**: Smart execution theo priority và dependencies
 - **🔴 MANDATORY**: Real-time status tracking (pending, in-progress, completed, failed)
-- **🔴 MANDATORY**: Fallback workflow khi thiếu Kiro files
+- **🔴 MANDATORY**: Dynamic workflow cho tạo/cập nhật Kiro files
 - **🔴 MANDATORY**: Quality gates với acceptance criteria validation
 
 ### Kiro Task Detection Algorithm
@@ -122,12 +123,12 @@
 ```bash
 # Gemini IDE sẽ tự động kiểm tra:
 1. Kiểm tra .kiro/specs/{project}/tasks.md
-2. Nếu thiếu → Kích hoạt Kiro Fallback Workflow
+2. Nếu thiếu → Kích hoạt Kiro Dynamic Workflow
 3. Nếu có → Parse và execute tasks theo priority
 4. Update status real-time trong Gemini IDE
 ```
 
-### Fallback Workflow Integration
+### Dynamic Workflow Integration
 
 1. **Brainstorm Stage**: Tạo insights từ user input
 2. **Requirements Stage**: Generate structured requirements.md
@@ -141,6 +142,35 @@
 - **Auto-completion**: Smart suggestions cho Kiro task format
 - **Error Prevention**: Validate task format trước khi execute
 - **Dependency Resolution**: Automatic task ordering trong IDE
+
+## 🔴 CRITICAL PRIORITY: TASK CREATION WORKFLOW ENFORCEMENT
+
+### **BẮT BUỘC** Task Creation Workflow Compliance for Gemini
+
+- **🔴 HIGHEST PRIORITY**: Gemini **PHẢI** tuân thủ 100% **[Task Creation Workflow](./.cursor/rules/task-creation-workflow.mdc)** khi tạo bất kỳ task nào
+- **BẮT BUỘC**: Áp dụng Automatic Task Expansion Engine cho mọi feature request từ user
+- **BẮT BUỘC**: Sử dụng Task Hierarchy Template (Feature → Sub-features → Tasks → Technical Details)
+- **BẮT BUỘC**: Include tất cả Mandatory Inclusions (UI/UX, Backend, Security, Quality, Operations)
+- **NGHIÊM CẤM**: Tạo task đơn lẻ mà không áp dụng Auto-Expansion Pattern
+
+### Gemini-Specific Task Creation Rules
+
+1. **Auto-Expansion Pattern**: Khi user yêu cầu feature X, Gemini tự động tạo comprehensive task list bao gồm Authentication, CRUD, UI, API, Validation, Security, Settings, Admin, Analytics và Related Features
+2. **Smart Context Awareness**: Gemini phải thích ứng task complexity với target users, platform requirements, industry standards và regional needs
+3. **Quality Gates**: Mỗi task phải có ít nhất 3 acceptance criteria, time estimate, technical specifications và requirements reference
+4. **Kiro Integration**: Output tasks phải tuân thủ Kiro format và được lưu vào `.kiro/specs/{project}/tasks.md`
+5. **Intent Analysis Integration**: Kết hợp với Gemini IDE workflow để phân tích intent trước khi tạo tasks
+
+### Critical Success Indicators for Gemini
+
+```markdown
+✅ Task Auto-Expansion Rate: > 95% (không được tạo task đơn lẻ)
+✅ Comprehensive Coverage: > 90% (bao gồm tất cả aspects cần thiết)
+✅ Kiro Format Compliance: > 98% (đúng format và structure)
+✅ Quality Gates Adherence: > 95% (đầy đủ acceptance criteria)
+✅ Context Awareness: > 85% (thích ứng với project context)
+✅ Intent Analysis Accuracy: > 95% (đúng phân loại feature/bug/optimization)
+```
 
 ## 🔄 Rules Hierarchy Priority
 
@@ -467,7 +497,7 @@ grep -A 10 "Acceptance Criteria" .kiro/specs/{project}/tasks.md
 1. **🔴 MANDATORY: Kiểm tra Kiro system** trước mọi task
 2. **Đọc .project-identity** để hiểu context dự án
 3. **Load appropriate workflow rules** từ `.cursor/rules/`
-4. **Kích hoạt Kiro Fallback** nếu thiếu files
+4. **Kích hoạt Kiro Dynamic Workflow** nếu thiếu files
 5. **Tuân thủ file organization** và documentation standards
 6. **Sử dụng backup protocols** khi thay đổi files
 7. **Execute Kiro tasks** theo priority và dependencies
@@ -475,6 +505,115 @@ grep -A 10 "Acceptance Criteria" .kiro/specs/{project}/tasks.md
 ---
 
 _File này được tạo để hỗ trợ Gemini IDE sử dụng cursor rules một cách hiệu quả. Mọi thay đổi rules phải được thực hiện trong `.cursor/rules/` trước._
+
+# GEMINI Agent Selection Guide
+
+> **🎯 Quy định khi nào sử dụng agent nào**  
+> **Compact guide for optimal agent selection**
+
+## 🚀 Quick Agent Selection
+
+### 📱 Mobile Development
+**Trigger Keywords**: `android`, `ios`, `mobile`, `app`, `flutter`, `react native`  
+**Agent**: `mobile-app-builder`  
+**Use When**: Building mobile applications, cross-platform development
+
+### ⚡ Rapid Development
+**Trigger Keywords**: `prototype`, `mvp`, `poc`, `quick`, `fast`, `demo`  
+**Agent**: `rapid-prototyper`  
+**Use When**: Need quick proof of concept or minimal viable product
+
+### 🌐 Frontend Development
+**Trigger Keywords**: `react`, `vue`, `angular`, `frontend`, `ui`, `web`  
+**Agent**: `frontend-developer`  
+**Use When**: Building web interfaces, UI components
+
+### 🏗️ Backend Architecture
+**Trigger Keywords**: `backend`, `api`, `database`, `server`, `microservices`  
+**Agent**: `backend-architect`  
+**Use When**: Designing server-side systems, APIs, databases
+
+### 🤖 AI Integration
+**Trigger Keywords**: `ai`, `ml`, `machine learning`, `nlp`, `computer vision`  
+**Agent**: `ai-engineer`  
+**Use When**: Integrating AI/ML capabilities into applications
+
+### 🔧 DevOps & Infrastructure
+**Trigger Keywords**: `devops`, `ci/cd`, `deployment`, `docker`, `kubernetes`  
+**Agent**: `devops-automator`  
+**Use When**: Setting up deployment pipelines, infrastructure automation
+
+### 📋 Project Management
+**Trigger Keywords**: `sprint`, `planning`, `task`, `agile`, `scrum`  
+**Agent**: `sprint-prioritizer`  
+**Use When**: Managing project workflows, sprint planning
+
+### 📊 User Research
+**Trigger Keywords**: `feedback`, `user`, `requirements`, `analysis`  
+**Agent**: `feedback-synthesizer`  
+**Use When**: Analyzing user feedback, gathering requirements
+
+### 🔍 Market Research
+**Trigger Keywords**: `research`, `market`, `trend`, `competitor`  
+**Agent**: `trend-researcher`  
+**Use When**: Market analysis, competitive research
+
+### ✍️ Content Creation
+**Trigger Keywords**: `content`, `blog`, `documentation`, `writing`  
+**Agent**: `content-creator`  
+**Use When**: Creating marketing content, documentation
+
+### 📈 App Store Optimization
+**Trigger Keywords**: `aso`, `app store`, `play store`, `optimization`  
+**Agent**: `app-store-optimizer`  
+**Use When**: Optimizing app store listings, ASO strategies
+
+### 🚀 Growth Strategy
+**Trigger Keywords**: `growth`, `acquisition`, `viral`, `retention`  
+**Agent**: `growth-hacker`  
+**Use When**: Developing growth strategies, user acquisition
+
+### 🎨 UI Design
+**Trigger Keywords**: `ui`, `design`, `interface`, `component`  
+**Agent**: `ui-designer`  
+**Use When**: Designing user interfaces, design systems
+
+### 🧪 API Testing
+**Trigger Keywords**: `api`, `testing`, `integration`, `endpoint`  
+**Agent**: `api-tester`  
+**Use When**: Testing APIs, integration testing
+
+### ⚡ Performance Testing
+**Trigger Keywords**: `performance`, `benchmark`, `optimization`, `speed`  
+**Agent**: `performance-benchmarker`  
+**Use When**: Performance analysis, optimization
+
+## 🎯 Selection Algorithm
+
+```yaml
+Selection Process:
+  1. Extract keywords from user input
+  2. Calculate confidence scores for each agent
+  3. Select agent with highest score (threshold: 0.7)
+  4. If no agent meets threshold, use rapid-prototyper as fallback
+  5. Load corresponding workflows from .cursor/rules/
+```
+
+## 🔄 Fallback Strategy
+
+**Default Agent**: `rapid-prototyper`  
+**When to Use**: No clear match found, general development tasks
+
+## ⚠️ Critical Rules
+
+- **ALWAYS** check keyword matches first
+- **NEVER** use multiple agents simultaneously
+- **MUST** load corresponding .cursor/rules/ workflows
+- **REQUIRED** minimum confidence score: 0.7
+
+---
+
+**Compact Design**: Optimized for quick reference and minimal context usage.
 
 # Gemini AI - Mandatory Code Quality Enforcement
 

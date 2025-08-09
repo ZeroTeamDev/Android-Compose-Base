@@ -162,5 +162,39 @@
     "auto_project_detection": true,
     "mcp_integration": true,
     "telegram_notifications": true
+  },
+  "mandatoryConfiguration": {
+    "description": "Cấu hình bắt buộc không được thay đổi để đảm bảo tính ổn định",
+    "enforcement": "STRICT - Không được phép thay đổi các version này",
+    "versions": {
+      "kotlin": "2.2.0",
+      "ksp": "2.2.0-2.0.2",
+      "hilt": "2.56"
+    },
+    "rationale": {
+      "kotlin": "Version ổn định với Compose Compiler mới nhất",
+      "ksp": "Tương thích hoàn hảo với Kotlin 2.2.0",
+      "hilt": "Version ổn định, tránh các bug trong version mới hơn"
+    },
+    "configFiles": [
+      "gradle/libs.versions.toml"
+    ],
+    "validationRules": [
+      "BẮT BUỘC kiểm tra version trước khi build",
+      "NGHIÊM CẤM upgrade version mà không có approval",
+      "BẮT BUỘC test compatibility khi có thay đổi"
+    ],
+    "errorPrevention": {
+      "commonIssues": [
+        "Hilt version mới có thể gây conflict với KSP",
+        "Kotlin version không match có thể gây compilation error",
+        "KSP version không tương thích có thể gây annotation processing failure"
+      ],
+      "preventionMeasures": [
+        "Lock version trong libs.versions.toml",
+        "Document trong .project-identity",
+        "Setup CI/CD validation"
+      ]
+    }
   }
 }

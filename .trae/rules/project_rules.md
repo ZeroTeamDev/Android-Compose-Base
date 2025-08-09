@@ -4,7 +4,54 @@
 > **BẮT BUỘC** sử dụng các rules từ `.cursor/rules/` làm nguồn chính thức cho tất cả workflows.  
 > File này chỉ là alias/link đến các rules chính thức trong `.cursor/rules/`
 
+## 🔴 CRITICAL PRIORITY: TASK MANAGEMENT WORKFLOWS (TRỌNG SỐ CAO)
+
+### **BẮT BUỘC** Task Management Workflow Compliance
+
+- **🔴 HIGHEST PRIORITY**: **[Task Creation Workflow](../../.cursor/rules/task-creation-workflow.mdc)**
+- **🔴 CRITICAL**: **[Task Update Workflow](../../.cursor/rules/task-update-workflow.mdc)** - **BẮT BUỘC**: Quy trình tự động cập nhật task
+- **BẮT BUỘC** tuân thủ 100% quy trình Task Creation Workflow khi tạo bất kỳ task nào
+- **BẮT BUỘC** tự động kích hoạt Task Update Workflow khi phát hiện trigger keywords
+- **BẮT BUỘC** áp dụng Automatic Task Expansion Engine cho mọi feature request
+- **BẮT BUỘC** sử dụng Task Hierarchy Template và Mandatory Inclusions
+- **BẮT BUỘC** đảm bảo Quality Gates compliance cho mỗi task được tạo
+- **NGHIÊM CẤM** tạo task đơn lẻ mà không áp dụng Auto-Expansion Pattern
+
+### Task Update Trigger Keywords (Trae AI AUTO-DETECTION)
+**BẮT BUỘC** tự động kích hoạt Task Update Workflow khi phát hiện:
+- "cập nhật task" / "update task" / "refresh task"
+- "kiểm tra task" / "check task status" / "task progress"
+- "I'll analyze the current codebase and update the task list"
+
+**Trae AI Automatic Actions:**
+1. Intelligent scan của `.kiro/specs/*/tasks.md` files
+2. Advanced codebase analysis với AI-powered insights
+3. Smart task progress assessment với machine learning
+4. Generate comprehensive progress report với actionable recommendations
+
+### Critical Task Creation Rules
+
+1. **Auto-Expansion Pattern**: Mọi feature X phải tự động bao gồm Authentication, CRUD, UI, API, Validation, Security, Settings, Admin, Analytics và Related Features
+2. **Task Hierarchy Template**: Feature → Sub-features → Tasks → Technical Details
+3. **Mandatory Inclusions**: UI/UX, Backend, Security, Quality, Operations cho mỗi task
+4. **Detail Level Requirements**: What, UI, API, Data, Logic, Errors cho mỗi task
+5. **Smart Context Awareness**: Thích ứng với target users, platform, industry và regional needs
+
+### Integration với Trae AI
+
+- **BẮT BUỘC** sử dụng Task Creation Workflow làm engine chính cho task generation
+- **BẮT BUỘC** tích hợp với Kiro system để output tasks vào `.kiro/specs/{project}/tasks.md`
+- **BẮT BUỘC** validate task format compliance với Kiro standards
+- **BẮT BUỘC** maintain task dependencies và cross-references
+
+---
+
 ## 🎯 Primary Rules Sources (MANDATORY)
+
+### Trae AI Specific Configuration
+
+- **🔴 [Trae AI Config](./trae-config.md)** - **BẮT BUỘC**: Cấu hình đặc thù cho Trae AI (TRỌNG SỐ CAO)
+- **🔴 [Agent Workflow Mapping](./agent-workflow-mapping.md)** - **BẮT BUỘC**: Mapping giữa agents và workflows (TRỌNG SỐ CAO)
 
 ### Core Development Rules
 
@@ -58,6 +105,7 @@
 - **[Project Identity Template](../../.cursor/rules/project-identity-template.mdc)** - Template định danh dự án
 - **[Project Identification Rules](../../.cursor/rules/project-identification-rules.mdc)** - Nhận diện dự án
 - **[Tech Stack Selection](../../.cursor/rules/tech-stack-selection.mdc)** - Lựa chọn công nghệ
+- **[Node.js Project Creation](../../.cursor/rules/nodejs-project-creation.mdc)** - 🚀 Quy trình tạo dự án Node.js toàn diện
 
 ### Advanced Features
 
@@ -70,7 +118,8 @@
 ### Kiro Task Execution System
 
 - **[Kiro Task Execution](../../.cursor/rules/kiro-task-execution.mdc)** - Hệ thống thực thi task tự động
-- **[Kiro Fallback Workflow](../../.cursor/rules/kiro-fallback-workflow.mdc)** - Quy trình dự phòng khi thiếu file Kiro
+- **🔴 [Task Creation Workflow](../../.cursor/rules/task-creation-workflow.mdc)** - **BẮT BUỘC**: Quy trình tạo task tự động với AI expansion (TRỌNG SỐ CAO)
+- **[Kiro Dynamic Workflow](../../.cursor/rules/kiro-dynamic-workflow.mdc)** - Quy trình tạo/cập nhật requirements, design, tasks theo yêu cầu
 - **[Kiro System Overview](../../.cursor/rules/kiro-system-overview.mdc)** - Tổng quan hệ thống Kiro
 - **[Auto Task Execution](../../.cursor/rules/auto-task-execution.mdc)** - Thực thi task tự động
 
@@ -79,11 +128,15 @@
 ### Mandatory Compliance
 
 1. **BẮT BUỘC** tuân thủ 100% các rules trong `.cursor/rules/`
-2. **NGHIÊM CẤM** tạo rules mới trong `.trae/rules/` mà không sync với `.cursor/rules/`
-3. **BẮT BUỘC** cập nhật alias links khi có thay đổi trong `.cursor/rules/`
-4. **BẮT BUỘC** sử dụng relative paths để đảm bảo tính di động
-5. **BẮT BUỘC** sử dụng Kiro Task Execution System cho mọi dự án
-6. **BẮT BUỘC** kích hoạt Kiro Fallback Workflow khi thiếu file Kiro
+2. **BẮT BUỘC** sử dụng Trae AI Agent Selection System cho mọi task
+3. **BẮT BUỘC** tuân thủ Agent Workflow Mapping khi chọn agent
+4. **NGHIÊM CẤM** tạo rules mới trong `.trae/rules/` mà không sync với `.cursor/rules/`
+5. **BẮT BUỘC** cập nhật alias links khi có thay đổi trong `.cursor/rules/`
+6. **BẮT BUỘC** sử dụng relative paths để đảm bảo tính di động
+7. **BẮT BUỘC** sử dụng Kiro Task Execution System cho mọi dự án
+8. **BẮT BUỘC** sử dụng Kiro Dynamic Workflow cho tạo/cập nhật requirements, design, tasks
+9. **BẮT BUỘC** maintain agent performance metrics và user feedback
+10. **NGHIÊM CẤM** bypass agent selection system without valid reason
 
 ### Synchronization Protocol
 
@@ -94,15 +147,33 @@
 ## 🔄 Rules Hierarchy Priority
 
 1. **Kiro Task System** - Critical Priority (Must Execute)
-2. `.cursor/rules/` - **PRIMARY SOURCE** (Highest Priority)
-3. `.appdexer/rules/` - Secondary reference
-4. `.trae/rules/` - Alias/Link layer only (Lowest Priority)
+2. **Trae AI Agent System** - Critical Priority (Must Execute)
+3. `.cursor/rules/` - **PRIMARY SOURCE** (Highest Priority)
+4. `.appdexer/rules/` - Secondary reference
+5. `.trae/rules/` - Alias/Link layer only (Lowest Priority)
 
 ## Trae AI Specific Configuration
 
+### Core Principles
+
 - **BẮT BUỘC** sử dụng rules từ `.cursor/rules/` làm nguồn chính thức
+- **BẮT BUỘC** sử dụng Trae AI Agent Selection System cho mọi task
 - File này chỉ chứa alias links và không được chứa rules độc lập
 - Mọi customization phải được thực hiện trong `.cursor/rules/`
+
+### Agent System Integration
+
+- **BẮT BUỘC** tuân thủ Agent Workflow Mapping khi thực hiện tasks
+- **BẮT BUỘC** sử dụng appropriate agent dựa trên keyword và context analysis
+- **BẮT BUỘC** fallback to agent-selector khi không chắc chắn
+- **BẮT BUỘC** maintain agent performance metrics và user satisfaction
+
+### Quality Assurance
+
+- **BẮT BUỘC** validate agent selection accuracy
+- **BẮT BUỘC** monitor task completion rates per agent
+- **BẮT BUỘC** gather user feedback for continuous improvement
+- **BẮT BUỘC** ensure seamless integration với Trae AI interface
 
 ## 🎯 Kiro Task Execution System for Trae AI
 
@@ -110,34 +181,39 @@
 
 - **Automatic Task Detection & Execution**: Tự động phát hiện và thực thi các Kiro tasks
 - **Status Tracking**: Theo dõi trạng thái thực thi từng task
-- **Fallback Workflow**: Quy trình dự phòng khi thiếu file Kiro
+- **Dynamic Workflow**: Quy trình tạo/cập nhật requirements, design, tasks theo yêu cầu
 - **Quality Gates**: Cổng chất lượng tại mỗi giai đoạn
+- **Multi-Mode Operation**: Hỗ trợ CREATE_NEW, UPDATE_EXISTING, SUPPLEMENT_DATA, RESTRUCTURE
 
 ### Kiro Task Detection Algorithm
 
-1. **Kiểm tra file Kiro**: `requirements.md`, `design.md`, `tasks.md`
-2. **Phân tích trạng thái**: Xác định file nào thiếu hoặc không đầy đủ
-3. **Kích hoạt workflow**: Primary flow hoặc Fallback flow
+1. **Context Analysis**: Phân tích user request và file hiện có
+2. **Mode Determination**: Xác định operation mode phù hợp
+3. **Kích hoạt workflow**: Primary flow hoặc Dynamic workflow
 4. **Thực thi tasks**: Theo thứ tự ưu tiên và phụ thuộc
 
-### Fallback Workflow Stages
+### Dynamic Workflow Stages
 
 #### 1. Brainstorm Stage
+
 - Phân tích yêu cầu dự án từ context hiện có
 - Tạo ý tưởng và định hướng phát triển
 - Output: Brainstorm document với các ý tưởng chính
 
 #### 2. Requirements Stage
+
 - Chuyển đổi brainstorm thành requirements cụ thể
 - Định nghĩa functional và non-functional requirements
 - Output: `requirements.md` hoàn chỉnh
 
 #### 3. Design Stage
+
 - Thiết kế kiến trúc và UI/UX dựa trên requirements
 - Tạo wireframes và system design
 - Output: `design.md` với thiết kế chi tiết
 
 #### 4. Tasks Stage
+
 - Phân tích design và tạo danh sách tasks cụ thể
 - Định nghĩa dependencies và priorities
 - Output: `tasks.md` với action items
@@ -357,7 +433,9 @@ kiro validate acceptance-criteria
 ## Getting Started with Trae AI + Kiro
 
 1. **BẮT BUỘC**: Kiểm tra Kiro system khi bắt đầu dự án
-2. **BẮT BUỘC**: Kích hoạt Kiro Fallback nếu thiếu file
-3. Theo dõi task execution thông qua Trae AI interface
-4. Sử dụng quality gates để đảm bảo chất lượng
-5. Tận dụng auto-completion và dependency resolution
+2. **BẮT BUỘC**: Sử dụng Kiro Dynamic Workflow cho tạo/cập nhật artifacts
+3. **BẮT BUỘC**: Xác định operation mode phù hợp (CREATE_NEW/UPDATE_EXISTING/SUPPLEMENT_DATA/RESTRUCTURE)
+4. Theo dõi task execution thông qua Trae AI interface
+5. Sử dụng quality gates để đảm bảo chất lượng
+6. Tận dụng auto-completion và dependency resolution
+7. **KHUYẾN NGHỊ**: Sử dụng Dynamic Workflow cho iterative development và changing requirements

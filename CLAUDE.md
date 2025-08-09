@@ -1,5 +1,16 @@
 # Claude - Configuration & Rules
 
+## 🔴 MANDATORY INFO-HUB SYNCHRONIZATION
+
+**_BẮT BUỘC_** kiểm tra và cập nhật info-hub.md trước/sau mọi công việc để tránh xung đột với AI khác.
+
+### Info-Hub Integration Protocol
+- **[Info-Hub Integration for Claude](.claude/info-hub-integration.md)** - Quy trình đồng bộ với AI khác
+- **BẮT BUỘC**: Kiểm tra `/info-hub.md` trước khi bắt đầu công việc
+- **BẮT BUỘC**: Cập nhật trạng thái trong bảng "Currently Working"
+- **BẮT BUỘC**: Xóa trạng thái sau khi hoàn thành
+- **NGHIÊM CẤM**: Chỉnh sửa file đang được AI khác làm việc
+
 ## 🔴 MANDATORY CODE QUALITY ENFORCEMENT
 
 **_NGHIÊM CẤM_** bỏ qua quy trình code quality này. Tất cả Claude responses phải tuân thủ 100% workflow mới.
@@ -10,6 +21,25 @@
 - **[AI Code Quality Automation](.cursor/rules/ai-code-quality-automation.mdc)** - Manual workflow
 - **[AI Manual Code Review Process](.cursor/rules/ai-manual-code-review-process.mdc)** - Review protocols
 - **[AI Execution Templates](.cursor/rules/ai-execution-templates.mdc)** - Execution templates
+
+### 🔴 CRITICAL PRIORITY: Task Management Workflows (TRỌNG SỐ CAO)
+- **🔴 HIGHEST PRIORITY: [Task Creation Workflow](../../.cursor/rules/task-creation-workflow.mdc)** - **BẮT BUỘC**: Quy trình tạo task tự động với AI expansion (TRỌNG SỐ CAO)
+- **🔴 CRITICAL: [Task Update Workflow](../../.cursor/rules/task-update-workflow.mdc)** - **BẮT BUỘC**: Quy trình tự động cập nhật task khi yêu cầu "cập nhật task" (TRỌNG SỐ CAO)
+- **[Kiro Task Execution](../../.cursor/rules/kiro-task-execution.mdc)** - Quy trình thực thi task tự động
+- **[Kiro Dynamic Workflow](../../.cursor/rules/kiro-dynamic-workflow.mdc)** - Quy trình tạo/cập nhật requirements, design, tasks theo yêu cầu
+
+#### Task Update Trigger Keywords (AUTO-DETECTION)
+**BẮT BUỘC** tự động kích hoạt Task Update Workflow khi phát hiện:
+- "cập nhật task" / "update task" / "refresh task"
+- "kiểm tra task" / "check task status" / "task progress"
+- "I'll analyze the current codebase and update the task list"
+
+**Automatic Actions:**
+1. Scan `.kiro/specs/*/tasks.md` files
+2. Analyze current codebase implementation status
+3. Update task progress và status
+4. Generate progress report với recommendations
+
 
 ## 🚨 Critical Quality Gates
 
@@ -55,6 +85,35 @@
 ---
 
 **🔴 ENFORCEMENT NOTICE**: Claude phải execute mandatory code quality workflow cho mọi code generation response.
+
+## 🔴 CRITICAL PRIORITY: TASK CREATION WORKFLOW ENFORCEMENT
+
+### **BẮT BUỘC** Task Creation Workflow Compliance for Claude
+
+- **🔴 HIGHEST PRIORITY**: Claude **PHẢI** tuân thủ 100% **[Task Creation Workflow](../../.cursor/rules/task-creation-workflow.mdc)** khi tạo bất kỳ task nào
+- **BẮT BUỘC**: Áp dụng Automatic Task Expansion Engine cho mọi feature request từ user
+- **BẮT BUỘC**: Sử dụng Task Hierarchy Template (Feature → Sub-features → Tasks → Technical Details)
+- **BẮT BUỘC**: Include tất cả Mandatory Inclusions (UI/UX, Backend, Security, Quality, Operations)
+- **NGHIÊM CẤM**: Tạo task đơn lẻ mà không áp dụng Auto-Expansion Pattern
+
+### Claude-Specific Task Creation Rules
+
+1. **Auto-Expansion Pattern**: Khi user yêu cầu feature X, Claude tự động tạo comprehensive task list bao gồm Authentication, CRUD, UI, API, Validation, Security, Settings, Admin, Analytics và Related Features
+2. **Smart Context Awareness**: Claude phải thích ứng task complexity với target users, platform requirements, industry standards và regional needs
+3. **Quality Gates**: Mỗi task phải có ít nhất 3 acceptance criteria, time estimate, technical specifications và requirements reference
+4. **Kiro Integration**: Output tasks phải tuân thủ Kiro format và được lưu vào `.kiro/specs/{project}/tasks.md`
+
+### Critical Success Indicators for Claude
+
+```markdown
+✅ Task Auto-Expansion Rate: > 95% (không được tạo task đơn lẻ)
+✅ Comprehensive Coverage: > 90% (bao gồm tất cả aspects cần thiết)
+✅ Kiro Format Compliance: > 98% (đúng format và structure)
+✅ Quality Gates Adherence: > 95% (đầy đủ acceptance criteria)
+✅ Context Awareness: > 85% (thích ứng với project context)
+```
+
+---
 
 _File này được tạo để hỗ trợ Claude sử dụng cursor rules một cách hiệu quả. Mọi thay đổi rules phải được thực hiện trong `.cursor/rules/` trước._
 
@@ -122,6 +181,7 @@ Base-AI-Project là framework template AI-powered được thiết kế cho Curs
 @.cursor/rules/project-identity-template.mdc
 @.cursor/rules/project-identification-rules.mdc
 @.cursor/rules/tech-stack-selection.mdc
+@.cursor/rules/nodejs-project-creation.mdc
 
 ### Advanced Features
 
@@ -133,7 +193,7 @@ Base-AI-Project là framework template AI-powered được thiết kế cho Curs
 ### Kiro Task Execution System
 
 @.cursor/rules/kiro-task-execution.mdc
-@.cursor/rules/kiro-fallback-workflow.mdc
+@.cursor/rules/kiro-dynamic-workflow.mdc  # Kiro Dynamic Workflow
 @.cursor/rules/kiro-system-overview.mdc
 @.cursor/rules/auto-task-execution.mdc
 
@@ -169,7 +229,7 @@ ls -la .kiro/specs/*/
 ### 2. Kiro Task System Detection
 
 - **AUTOMATIC**: Claude tự động phát hiện và thực thi Kiro tasks từ `.kiro/specs/{project}/tasks.md`
-- **FALLBACK**: Nếu thiếu files Kiro, tự động kích hoạt Kiro Fallback Workflow
+- **DYNAMIC**: Sử dụng Kiro Dynamic Workflow để tạo/cập nhật requirements, design, tasks theo yêu cầu
 - **PRIORITY**: Kiro system có ưu tiên cao nhất trong task execution
 
 ### 3. Brainstorm Phase (MANDATORY for new projects)
@@ -265,7 +325,7 @@ ls -la .kiro/specs/*/
 - **Automatic Task Detection**: Tự động phát hiện tasks từ `.kiro/specs/{project}/tasks.md`
 - **Smart Execution**: Thực thi tasks theo thứ tự priority và dependencies
 - **Real-time Status Tracking**: Theo dõi trạng thái task (pending, in-progress, completed, failed)
-- **Fallback Workflow**: Tự động tạo missing files (requirements.md, design.md, tasks.md)
+- **Dynamic Workflow**: Tạo/cập nhật files (requirements.md, design.md, tasks.md) theo yêu cầu
 - **Quality Gates**: Xác thực acceptance criteria cho mỗi task
 
 ### Kiro Task Format
@@ -292,7 +352,7 @@ Detailed task description...
 Technical notes and considerations...
 ```
 
-### Fallback Workflow Stages
+### Dynamic Workflow Stages
 
 1. **Brainstorm**: Tạo insights và requirements từ user input
 2. **Requirements**: Chuyển đổi insights thành structured requirements
